@@ -84,6 +84,8 @@ before_filter :login_required, :except => "lender_registration"
 				Emailer.deliver_lender_application("#{@lender.first_name}", "#{@lender.last_name}", "#{@lender.email}")
 				Emailer.deliver_lender_application_notify("#{@lender.first_name}", "#{@lender.last_name}", "#{@lender.email}", "#{@lender.id}")
 				redirect_to :controller => 'main', :action => 'index'
+			else
+        render :action => :lender_registration
 			end
 		end
 	end
