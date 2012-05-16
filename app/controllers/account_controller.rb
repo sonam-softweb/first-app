@@ -1,7 +1,7 @@
 class AccountController < ApplicationController
 skip_before_filter :login_required
 #layout "proposed"
-  
+
 #	def login
 #		if request.post?
 #			# Does e-mail address exist?
@@ -15,11 +15,11 @@ skip_before_filter :login_required
 #				@user_id = result.user_id
 #				@table_name = result.tbl
 #				# check password
-#				@current_user = User.find_by_id_and_password(@user_id, Digest::SHA1.hexdigest(params[:password]))
+#				current_user = User.find_by_id_and_password(@user_id, Digest::SHA1.hexdigest(params[:password]))
 #
-#				unless @current_user.nil?
-#					session[:user_id] = @current_user.id
-#					session[:user_type] = @current_user.user_type
+#				unless current_user.nil?
+#					session[:user_id] = current_user.id
+#					session[:user_type] = current_user.user_type
 #					unless session[:return_to].blank?
 #						redirect_to session[:return_to]
 #						session[:return_to] = nil
@@ -39,11 +39,11 @@ skip_before_filter :login_required
 #	end
 
   def login
+
     if request.post?
-      #@current_user = User.find_by_email_and_password(params[:email], Digest::SHA1.hexdigest(params[:password]))
-      @current_user = User.find_by_email_and_password(params[:email], params[:password])
-      unless @current_user.nil?
-        session[:user_id] = @current_user.id
+      @user_session = UserSession.new(params[:user_session])
+      if @user_session.save
+        session[:user_id] = current_user.id
         flash[:notice] = 'Login Successful'
         unless session[:return_to].blank?
           redirect_to session[:return_to]
@@ -52,19 +52,39 @@ skip_before_filter :login_required
           redirect_to :controller => 'main', :action => 'index'
         end
       else
-        flash[:notice] = 'Login unsuccessful'
+
+        render :action => :login
       end
+      #current_user = User.find_by_email_and_password(params[:email], Digest::SHA1.hexdigest(params[:password]))
+      # current_user = User.find_by_email_and_password(params[:email], params[:password])
+      # unless current_user.nil?
+      #   session[:user_id] = current_user.id
+      #   flash[:notice] = 'Login Successful'
+      #   unless session[:return_to].blank?
+      #     redirect_to session[:return_to]
+      #     session[:return_to] = nil
+      #   else
+      #     redirect_to :controller => 'main', :action => 'index'
+      #   end
+      # else
+      #   flash[:notice] = 'Login unsuccessful'
+      # end
+    else
+      @user_session = UserSession.new
     end
   end
-  
+
   def logout
-    session[:user_id] = @current_user = nil
+    current_user_session.destroy
+    flash[:notice] = "Logout successful!"
+
+    session[:user_id] = current_user = nil
     session[:return_to] = nil
     session[:current_user_borrower_id] = nil
     session[:current_user_lender_id] = nil
     session[:current_user_installer_id] = nil
     session[:current_user_manager_id] = nil
-    flash[:notice] = 'Logout Successful'          
+    flash[:notice] = 'Logout Successful'
     redirect_to '/account/login'
   end
 end

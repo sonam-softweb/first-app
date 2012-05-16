@@ -9,7 +9,7 @@ class CreateEmailSubscribers < ActiveRecord::Migration
 	      	t.timestamps
     	end
 
-		EmailSubscriber.create :first_name => "Lee", :last_name => "Barken", :email => "barken@gmail.com", :email_list_id => "1"
+		EmailSubscriber.create :first_name => "Lee", :last_name => "Barken", :email => "esha.desai@softwebsolutions.com", :email_list_id => "1"
 
   	end
 

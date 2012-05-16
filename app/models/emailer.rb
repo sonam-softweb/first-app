@@ -20,7 +20,7 @@ class Emailer < ActionMailer::Base
 		body[:email] = email
 		body[:id] = id
 		body[:applicant_comments] = applicant_comments
-		recipients "barken@gmail.com"
+		recipients "esha.desai@softwebsolutions.com"
 		from "info@collectivesun.com"
 		sent_on= Time.now
 	end
@@ -44,7 +44,7 @@ class Emailer < ActionMailer::Base
 		body[:id] = id
 		body[:applicant_comments] = applicant_comments
 		body[:our_notes] = our_notes
-		recipients "barken@gmail.com"
+		recipients "esha.desai@softwebsolutions.com"
 		from "info@collectivesun.com"
 		sent_on= Time.now
 	end
@@ -67,7 +67,7 @@ class Emailer < ActionMailer::Base
 		body[:id] = id
 		body[:applicant_comments] = applicant_comments
 		body[:our_notes] = our_notes
-		recipients "barken@gmail.com"
+		recipients "esha.desai@softwebsolutions.com"
 		from "info@collectivesun.com"
 		sent_on= Time.now
 	end
@@ -92,7 +92,7 @@ class Emailer < ActionMailer::Base
 		body[:email] = email
 		body[:borrower_id] = borrower_id
 		body[:installer_id] = installer_id
-		recipients "barken@gmail.com"
+		recipients "esha.desai@softwebsolutions.com"
 		from "info@collectivesun.com"
 		sent_on= Time.now
 	end
@@ -115,7 +115,7 @@ class Emailer < ActionMailer::Base
 		body[:last_name] = last_name
 		body[:email] = email
 		body[:id] = id
-		recipients "barken@gmail.com"
+		recipients "esha.desai@softwebsolutions.com"
 		from "info@collectivesun.com"
 		sent_on= Time.now
 	end
@@ -136,7 +136,7 @@ class Emailer < ActionMailer::Base
 		body[:email] = email
 		body[:id] = id
 		body[:our_notes] = our_notes
-		recipients "barken@gmail.com"
+		recipients "esha.desai@softwebsolutions.com"
 		from "info@collectivesun.com"
 		sent_on= Time.now
 	end
@@ -156,7 +156,7 @@ class Emailer < ActionMailer::Base
 		body[:email] = email
 		body[:id] = id
 		body[:our_notes] = our_notes
-		recipients "barken@gmail.com"
+		recipients "esha.desai@softwebsolutions.com"
 		from "info@collectivesun.com"
 		sent_on= Time.now
 	end
@@ -176,7 +176,7 @@ class Emailer < ActionMailer::Base
     	body[:first_name] = first_name
 		body[:last_name] = last_name
 		body[:email] = email
-		recipients "barken@gmail.com"
+		recipients "esha.desai@softwebsolutions.com"
 		from "info@collectivesun.com"
 		sent_on= Time.now
 	end
@@ -185,7 +185,7 @@ class Emailer < ActionMailer::Base
 		subject "Collective Sun Borrower Goal Reached"
 		body[:borrower_id] = borrower_id
     	body[:system_price] = system_price
-		recipients "barken@gmail.com"
+		recipients "esha.desai@softwebsolutions.com"
 		from "info@collectivesun.com"
 		sent_on= Time.now
 	end
@@ -208,7 +208,7 @@ class Emailer < ActionMailer::Base
 		body[:last_name] = last_name
 		body[:email] = email
 		body[:id] = id
-		recipients "barken@gmail.com"
+		recipients "esha.desai@softwebsolutions.com"
 		from "info@collectivesun.com"
 		sent_on= Time.now
 	end
@@ -229,7 +229,7 @@ class Emailer < ActionMailer::Base
 		body[:email] = email
 		body[:id] = id
 		body[:our_notes] = our_notes
-		recipients "barken@gmail.com"
+		recipients "esha.desai@softwebsolutions.com"
 		from "info@collectivesun.com"
 		sent_on= Time.now
 	end
@@ -249,7 +249,7 @@ class Emailer < ActionMailer::Base
 		body[:email] = email
 		body[:id] = id
 		body[:our_notes] = our_notes
-		recipients "barken@gmail.com"
+		recipients "esha.desai@softwebsolutions.com"
 		from "info@collectivesun.com"
 		sent_on= Time.now
 	end
@@ -273,7 +273,7 @@ class Emailer < ActionMailer::Base
 		body[:email] = email
 		body[:amount] = amount
 		body[:bid_id] = bid_id
-		recipients "barken@gmail.com"
+		recipients "esha.desai@softwebsolutions.com"
 		from "info@collectivesun.com"
 		sent_on= Time.now
 	end
@@ -310,7 +310,7 @@ class Emailer < ActionMailer::Base
 		body[:email] = email
 		body[:email_subscriber_id] = email_subscriber_id
 		body[:email_list_id] = email_list_id
-		recipients "barken@gmail.com"
+		recipients "esha.desai@softwebsolutions.com"
 		from "info@collectivesun.com"
 		sent_on= Time.now
 	end
@@ -322,14 +322,21 @@ class Emailer < ActionMailer::Base
 		body[:from_email] = from_email
 		body[:to_name] = to_name
 		body[:message] = message
-		recipients to_name + " <" + recipient + ">" 
-		from from_name + " <" + from_email + ">" 
-#		recipients recipient 
+		recipients to_name + " <" + recipient + ">"
+		from from_name + " <" + from_email + ">"
+#		recipients recipient
 #		from from_email
 
 		sent_on= Time.now
 	end
 
-  
+   def password_reset_instructions(user)
+    subject      "Password Reset Instructions"
+    from         "noreplay@domain.com"
+    recipients   user.email
+    content_type "text/html"
+    sent_on      Time.now
+    body         :edit_password_reset_url => edit_password_reset_path(user.perishable_token)
+  end
 
 end

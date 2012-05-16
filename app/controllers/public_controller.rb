@@ -33,23 +33,23 @@ class PublicController < ApplicationController
     #@borrowers = Borrower.find(:all, :conditions => {"status" => "Displayed"})
 
     #		#What kind of user is this?
-    #		unless @current_user.blank?
-    #			case @current_user.user_type
+    #		unless current_user.blank?
+    #			case current_user.user_type
     #				when "manager"
-    #					@first_name = @current_user.manager.first_name
-    #					@last_name = @current_user.manager.last_name
+    #					@first_name = current_user.manager.first_name
+    #					@last_name = current_user.manager.last_name
     #				when "installer"
-    #					@first_name = @current_user.installer.first_name
-    #					@last_name = @current_user.installer.last_name
+    #					@first_name = current_user.installer.first_name
+    #					@last_name = current_user.installer.last_name
     #				when "borrower"
-    #					@first_name = @current_user.borrower.first_name
-    #					@last_name = @current_user.borrower.last_name
+    #					@first_name = current_user.borrower.first_name
+    #					@last_name = current_user.borrower.last_name
     #				when "lender"
-    #					@first_name = @current_user.lender.first_name
-    #					@last_name = @current_user.lender.last_name			
+    #					@first_name = current_user.lender.first_name
+    #					@last_name = current_user.lender.last_name
     #			end
     #		end
-    
+
   end
 
 	def show
@@ -60,28 +60,28 @@ class PublicController < ApplicationController
 	end
 
 	def about
-	
+
 	end
-	
+
 	def contact
-	
+
 	end
-      
+
 	def lenders
-	
+
 	end
 
 	def borrowers
-	
+
 	end
 
 	def installers
-	
+
 	end
-	
+
 	def faq
 	end
-        
+
         def benefactor
 	end
 

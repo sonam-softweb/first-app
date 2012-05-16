@@ -1,5 +1,5 @@
 	<div id="login_logout">
-		<% unless @current_user.blank? %>
+		<% unless current_user.blank? %>
 			Logged in as:
 			<%= @first_name%>&nbsp;<%= @last_name%>
 			<em><%= link_to "(Logout)", :controller => 'account', :action => 'logout' %></em>

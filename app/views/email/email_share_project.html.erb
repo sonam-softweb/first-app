@@ -9,16 +9,16 @@ Project Name: <%= @borrower.headline %>
 	From Name:
 	</TD>
 	<TD Align=left>
-	<%= a.text_field :from_name, :value => (@current_user.first_name + " "+ @current_user.last_name if logged_in?) %>
+	<%= a.text_field :from_name, :value => (current_user.first_name + " "+ current_user.last_name if logged_in?) %>
 	</TD>
 	</TR>
-	
+
 	<TR>
 	<TD Align=right>
 	From Email Address:
 	</TD>
 	<TD Align=left>
-	<%= a.text_field :from_email, :value => (@current_user.email if logged_in?) %>
+	<%= a.text_field :from_email, :value => (current_user.email if logged_in?) %>
 	</TD>
 	</TR>
 
@@ -30,7 +30,7 @@ Project Name: <%= @borrower.headline %>
 	<%= a.text_field :to_name %>
 	</TD>
 	</TR>
-	
+
 	<TR>
 	<TD Align=right>
 	To Email Address:
@@ -66,7 +66,7 @@ Project Name: <%= @borrower.headline %>
 	<%= submit_tag(value = "   *** SUBMIT ***   ") %>
 	</TD>
 	</TR>
-		
+
 	</Table>
 <% end %>
 </center>

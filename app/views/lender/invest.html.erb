@@ -61,7 +61,7 @@ Description: <%= @borrower.description %>
 	Name:
 	</TD>
 	<TD Align=left>
-	<%= @current_user.first_name%>&nbsp;<%= @current_user.last_name%>
+	<%= current_user.first_name%>&nbsp;<%= current_user.last_name%>
 	</TD>
 	</TR>
 	<TR>
@@ -69,7 +69,7 @@ Description: <%= @borrower.description %>
 	Bid Amount:
 	</TD>
 	<TD Align=left>
-	<%= number_to_currency(@amount, :precision => 0)%>	
+	<%= number_to_currency(@amount, :precision => 0)%>
 	<%= hidden_field_tag("bid[amount]", @amount) %>
 	</TD>
 	</TR>
@@ -85,7 +85,7 @@ Description: <%= @borrower.description %>
 	<%= submit_tag "  *** CONFIRM  ***   " %>
 	</TD>
 	</TR>
-		
+
 	</Table>
 <% end %>
 <BR><BR>

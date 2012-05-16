@@ -1,10 +1,10 @@
 class LenderController < ApplicationController
 
-before_filter :login_required
-before_filter :lender_required # You must have a user_right of "Lender"
+before_filter :login_required, :except => "lender_registration"
+#before_filter :lender_required,  # You must have a user_right of "Lender"
 
 	def index
-		
+
 	end
 
 	def invest
@@ -37,25 +37,55 @@ before_filter :lender_required # You must have a user_right of "Lender"
 				Emailer.deliver_borrower_goal_reached_notify("#{@borrower.id}", "#{@borrower.system_price}")
 
 			end
-			flash[:notice] = "Your bid of $#{@bid.amount} has been saved.  An <B>e-mail</B> confirmation has been sent to <B><Font Color=Red>" + @current_user.email + "</B></Font>."
+			flash[:notice] = "Your bid of $#{@bid.amount} has been saved.  An <B>e-mail</B> confirmation has been sent to <B><Font Color=Red>" + current_user.email + "</B></Font>."
 
-			Emailer.deliver_lender_bid("#{params[:id]}", "#{@current_user.first_name}", "#{@current_user.email}", "#{@bid.amount}", "#{@borrower.zip}")
-			Emailer.deliver_lender_bid_notify("#{@current_user.id}", "#{@current_user.first_name}", "#{@current_user.last_name}", "#{@current_user.email}", "#{@bid.amount}", "#{@bid.id}")
+			Emailer.deliver_lender_bid("#{params[:id]}", "#{current_user.first_name}", "#{current_user.email}", "#{@bid.amount}", "#{@borrower.zip}")
+			Emailer.deliver_lender_bid_notify("#{current_user.id}", "#{current_user.first_name}", "#{current_user.last_name}", "#{current_user.email}", "#{@bid.amount}", "#{@bid.id}")
 			redirect_to :controller => 'public', :action => 'show', :id => @borrower.id
 
 		end
 	end
-	
+
 
 	def bid_history
 		@lender = Lender.find(session[:current_user_lender_id])
 		@bids =  @lender.bids
-	end	
+	end
 
 	def loan_history
 		@lender = Lender.find(session[:current_user_lender_id]).loans
 		@loans =  Loan.find(:all, :conditions => {:lender_id => session[:current_user_lender_id]})
-	end	
+	end
 
-	
+
+  def lender_registration
+    if request.post?
+			@lender = Lender.new(params[:lender])
+#			@user = User.new
+
+			# Record this lender's ID in the lenderlender record
+			#@lender.installer_id = session[:current_user_installer_id]
+
+			# Create the password for the URL
+			#password = @lender.email.to_s + "secret" + @lender.installer_id.to_s
+			#@password_hash = Digest::SHA1.hexdigest(password)
+
+			# Create their password
+#			password = random_password
+#			@password_hash = Digest::SHA1.hexdigest(password)
+#			@user.password = @password_hash
+#			@user.borrower_id = @borrower_application.id
+#			@user.user_type = "lenderlender"
+
+#			if @lenderlender.save && @user.save && @lenderlender.update_attribute(:user_id, @user.id)
+			if @lender.save
+        flash[:notice] = "Your application has been received.  An <B>e-mail</B> has been sent to <B><Font Color=Red>" + @lender.email + "</B></Font> with additional information."
+
+				Emailer.deliver_lender_application("#{@lender.first_name}", "#{@lender.last_name}", "#{@lender.email}")
+				Emailer.deliver_lender_application_notify("#{@lender.first_name}", "#{@lender.last_name}", "#{@lender.email}", "#{@lender.id}")
+				redirect_to :controller => 'main', :action => 'index'
+			end
+		end
+	end
+
 end

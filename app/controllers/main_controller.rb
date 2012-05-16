@@ -3,10 +3,10 @@ class MainController < ApplicationController
 before_filter :login_required
 
 	def index
-		if ! @user_borrowers.empty?
+		if @user_borrowers && !@user_borrowers.empty?
 			# this user includes at least one borrower.  make sure any changes here are copied to borrower_controller.rb
 			@borrower = Borrower.find(session[:current_user_borrower_id])
-			@bids =  @borrower.bids.sum("amount") || 0	
+			@bids =  @borrower.bids.sum("amount") || 0
 		end
 	end
 
