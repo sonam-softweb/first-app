@@ -1,0 +1,42 @@
+<%= render :partial => "login_logout" %>
+<center>
+<Font Size=5>Installers</Font><BR><BR>
+<TABLE Border=1>
+
+<TR Align=center>
+<TD>
+<U>Company</U>
+</TD>
+<TD>
+<U>Location</U>
+</TD>
+<TD>
+<U>Website</U>
+</TD>
+<TD>
+</TD>
+</TR>
+
+<TR>
+<% @installers.each do |x| %>
+	<TD>
+	<%= x.company_name%>
+	</TD>
+	<TD>
+	<%= x.city %>, <%= x.state %>
+	</TD>
+	<TD>
+	<% @website_url = /^http/.match(x.website) ? x.website : "http://#{x.website}"%>
+	<%= link_to(x.website, @website_url, :target => "_blank") %>
+	</TD>
+	<TD>
+	<%= link_to "View Details", { :action => 'installer_details', :id => x.id } %>
+	</TD>
+
+<% end %>
+</TR>
+</TABLE>
+<BR>
+<%= link_to("I would like to register as an installer", :controller => "app", :action => "installer") %><BR>
+</center>
+

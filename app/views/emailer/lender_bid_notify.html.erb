@@ -1,0 +1,12 @@
+NEW LENDER BID RECEIVED.
+
+Lender_ID: <%=@lender_id%>
+First Name: <%=@first_name%>
+Last Name: <%=@last_name%>
+E-Mail: <%=@email%>
+Amount: <%=@amount%>
+Bid_ID: <%=@bid_id%>
+
+http://www.collectivesun.com/borrower/show/<%=Bid.find(@bid_id).borrower_id%>
+
+Time = <%=Time.now%>

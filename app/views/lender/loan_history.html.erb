@@ -1,0 +1,40 @@
+<center>
+<B><Font Size=4>Loan History</Font></B>
+<TABLE border=1 cellpadding=2>
+<TR>
+<TD Align=Center>
+<U>Project</U>
+</TD>
+<TD Align=Center>
+<U>Amount</U>
+</TD>
+<TD Align=Center>
+<U>Percentage of Total Loan</U>
+</TD>
+<TD Align=Center>
+<U>Date/Time</U>
+</TD>
+
+<BR><BR>
+<% @loans.each do |x| %>
+	<TR>
+	<TD Align=left>
+	<%= link_to (x.borrower.headline, :controller => "borrower", :action => "show", :id => x.borrower_id) %>
+	</TD>
+	<TD Align=right>
+	<%= number_to_currency(Bid.find(:all, :select => 'sum(amount) as amount', :group=>'lender_id', :conditions => {:lender_id => @current_user.lender.id, :borrower_id => x.borrower_id})[0].amount, :precision => 0) %>
+	</TD>
+	<TD Align=right>
+	<%= number_to_percentage(x.lender_percentage) %>
+	</TD>
+	<TD>
+	<%= x. created_at.strftime("%m/%d/%Y %I:%M%p") %>
+	</TD>
+	</TR>
+<% end %>
+
+</TABLE>
+<BR><BR>
+<%= link_to ("Main Menu", :controller => "lender", :action => "index") %><BR>
+<%= Time.now.strftime("%m/%d/%Y")%>&nbsp;&nbsp;<%= Time.now.strftime("%I:%M%p")%>
+</center>

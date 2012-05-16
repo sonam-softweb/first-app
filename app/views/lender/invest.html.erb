@@ -1,0 +1,95 @@
+<center>
+<B><Font Size=4>Invest in a Project</Font></B>
+<BR><BR>
+<U>Project Info</U><BR>
+<B><%= @borrower.headline%></B><BR>
+<TABLE Border=1>
+<TR>
+<TD>
+<U>Location</U>
+</TD>
+<TD>
+<U>System Size (kW)</U>
+</TD>
+<TD>
+<U>System Price ($)</U>
+</TD>
+<TD>
+<U>Bids ($)</U>
+</TD>
+<TD>
+<U>Still Needed ($)</U>
+</TD>
+<TD>
+<U>Time Left</U>
+</TD>
+</TR>
+
+<TR Align=Left>
+<TD>
+<%=@borrower.city%>, <%=@borrower.state%>&nbsp;<%=@borrower.zip%>
+</TD>
+<TD Align=Right>
+<%= @borrower.system_size %>
+</TD>
+<TD Align=Right>
+<%= number_to_currency(@borrower.system_price, :precision => 0) %>
+<TD Align=Right>
+<%= number_to_currency(@bids, :precision => 0) %>
+</TD>
+<TD Align=Right>
+<%= number_to_currency(@borrower.system_price.to_i - @bids.to_i, :precision => 0) %>
+</TD>
+<TD Align=Right>
+<%#= distance_of_time_in_words_to_now(@borrower.expiration_date) %>
+<%=((@borrower.expiration_date - Time.now()) / 86400).round(2) %> days
+</TD>
+</TR>
+<TR>
+<TD Colspan=6>
+Description: <%= @borrower.description %>
+</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<U>Lender Info</L><BR>
+<%= error_messages_for 'bid' %>
+<% form_for :bid do |a| %>
+	<Table Border=0>
+	<TR>
+	<TD Align=right>
+	Name:
+	</TD>
+	<TD Align=left>
+	<%= @current_user.first_name%>&nbsp;<%= @current_user.last_name%>
+	</TD>
+	</TR>
+	<TR>
+	<TD Align=right>
+	Bid Amount:
+	</TD>
+	<TD Align=left>
+	<%= number_to_currency(@amount, :precision => 0)%>	
+	<%= hidden_field_tag("bid[amount]", @amount) %>
+	</TD>
+	</TR>
+
+
+	<TR>
+	<TD Colspan=2 align=center>
+<BR>
+	<% unless @borrower.password == nil%>
+		Password Required to Bid
+		<br>
+	<% end %>
+	<%= submit_tag "  *** CONFIRM  ***   " %>
+	</TD>
+	</TR>
+		
+	</Table>
+<% end %>
+<BR><BR>
+<%= link_to ("Main Menu", :controller => "lender", :action => "index") %><BR>
+<%#= Time.now.strftime("%D %I:%M:%S %p")%>
+<%= Time.now.strftime("%m/%d/%Y")%>&nbsp;&nbsp;<%= Time.now.strftime("%I:%M%p")%>
+</center>

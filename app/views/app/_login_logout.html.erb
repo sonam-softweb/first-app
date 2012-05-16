@@ -1,0 +1,17 @@
+	<div id="login_logout">
+		<% unless @current_user.blank? %>
+			Logged in as:
+			<%= @first_name%>&nbsp;<%= @last_name%>
+			<em><%= link_to "(Logout)", :controller => 'account', :action => 'logout' %></em>
+			<%= link_to 'Menu', :controller => 'manage', :action => 'index' if session[:user_type] == "manager" %>
+			<%= link_to 'Menu', :controller => 'installer', :action => 'index' if session[:user_type] == "installer" %>
+			<%= link_to 'Menu', :controller => 'borrower', :action => 'index' if session[:user_type] == "borrower" %>
+			<%= link_to 'Menu', :controller => 'lender', :action => 'index' if session[:user_type] == "lender" %>
+		<% else %>
+			<em>Not logged in.</em>
+			<%= link_to 'Login', :controller => 'account', :action => 'login' %>
+		<% end %>
+	</div>
+	<BR>
+
+

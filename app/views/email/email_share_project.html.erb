@@ -1,0 +1,72 @@
+<center>
+<font size=3><b>Share Project With a Friend</b></font><BR><BR>
+Project Name: <%= @borrower.headline %>
+<%= error_messages_for 'EmailShareProject' %>
+<% form_for :email_share_project do |a| %>
+	<Table Border=0>
+	<TR>
+	<TD Align=right>
+	From Name:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :from_name, :value => (@current_user.first_name + " "+ @current_user.last_name if logged_in?) %>
+	</TD>
+	</TR>
+	
+	<TR>
+	<TD Align=right>
+	From Email Address:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :from_email, :value => (@current_user.email if logged_in?) %>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD Align=right>
+	To Name:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :to_name %>
+	</TD>
+	</TR>
+	
+	<TR>
+	<TD Align=right>
+	To Email Address:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :to_email %>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD Align=right>
+	Additional Message:
+	</TD>
+	<TD Align=left>
+	<%= a.text_area :message, :rows => 4, :columns => 60, :maxlength => 400 %>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD Align=right>
+	Type: CollectiveSun
+	</TD>
+	<TD Align=left>
+	<%= text_field_tag :notspam %>(Anti-Spam Feature)
+	</TD>
+	</TR>
+
+
+	<TR>
+	<TD Colspan=2 align=center>
+	<BR>
+	<%= hidden_field_tag("email_share_project[borrower_id]", params[:id]) %>
+	<%= submit_tag(value = "   *** SUBMIT ***   ") %>
+	</TD>
+	</TR>
+		
+	</Table>
+<% end %>
+</center>

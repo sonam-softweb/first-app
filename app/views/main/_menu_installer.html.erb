@@ -1,0 +1,14 @@
+<div class="row round-corners index-page">
+<h1>Installer Menu - <%= Installer.find(session[:current_user_installer_id]).company_name %></h1>
+<h3><%= link_to "Invite a New Customer", :controller => "installer", :action => "new_borrower" %></h3>
+
+<h3><%= link_to "View Your Customer Invitations", :controller => "installer", :action => "list_borrower_invitations" %></h3>
+
+<h2>Switch to another Installer</h2>
+<% @user_installers.each do |x| %>
+  <p>
+    <%= link_to "Switch to #{Installer.find(x).company_name}", {:controller => :main, :action => :switch_installer, :id => x} unless session[:current_user_installer_id].to_i == x%>
+  </p>
+<% end%>
+  
+</div>

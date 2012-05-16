@@ -1,0 +1,63 @@
+<center>
+<font size=3><b>Subscribe to EMail List</b></font><BR><BR>
+List Description: <%= @EmailList.list_description %>
+<%= error_messages_for 'EmailSubscriber' %>
+<% form_for :email_subscriber do |a| %>
+	<Table Border=0>
+	<TR>
+	<TD Align=right>
+	First Name:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :first_name %>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD Align=right>
+	Last Name:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :last_name %>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD Align=right>
+	E-Mail Address:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :email %>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD Align=right>
+	Zip Code:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :zip_code, :size => 3, :maxlength => 5 %>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD Align=right>
+	Type: CollectiveSun
+	</TD>
+	<TD Align=left>
+	<%= text_field_tag :notspam %>(Anti-Spam Feature)
+	</TD>
+	</TR>
+
+
+	<TR>
+	<TD Colspan=2 align=center>
+	<BR>
+	<%= hidden_field_tag("email_subscriber[email_list_id]", params[:id]) %>
+	<%= submit_tag(value = "   *** SUBMIT ***   ") %>
+	</TD>
+	</TR>
+
+	</Table>
+<% end %>
+</center>

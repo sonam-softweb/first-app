@@ -1,0 +1,117 @@
+<div class="round-corners grey row">
+  <div class="sixcol">
+    <h1><%= @borrower.headline%></h1>
+
+    <div id="rg-gallery" class="rg-gallery">
+      <div class="rg-thumbs">
+        <!-- Elastislide Carousel Thumbnail Viewer -->
+        <div class="es-carousel-wrapper">
+          <div class="es-nav">
+            <span class="es-nav-prev">Previous</span>
+            <span class="es-nav-next">Next</span>
+          </div>
+          <div class="es-carousel">
+            <ul>
+	      <% @photos.each do |a_photo| %>
+		<li>
+                  <a href="#">
+		    <%= image_tag(a_photo.photo.url(:thumb), {:"data-large" => a_photo.photo.url(:medium), :"data-description" => a_photo.description}) %>
+                  </a>
+		</li>
+	      <% end %>
+            </ul>
+          </div>
+        </div>
+        <!-- End Elastislide Carousel Thumbnail Viewer -->
+      </div><!-- rg-thumbs -->
+    </div><!-- rg-gallery -->
+    <div class="project-bid">
+      <div class="current-bids blue-gradient round-corners">
+	<h2>Current Pledges</h2>
+      </div>
+      <div class="onecol">
+	&nbsp;
+      </div>
+      
+      <div class="elevencol last">
+      <TABLE>
+	<th>
+	  <TD>
+	    Screen Name
+	  </TD>
+	  <TD>
+	    Date/Time
+	  </TD>
+	  <TD>
+	    Amount
+	  </TD>
+	</th>
+
+	<% @bids.each do |x| %>
+	  <TR>
+	    <TD>
+	      <%= x.lender.screen_name %>
+	    </TD>
+	    <TD>
+	      <%= x.created_at.strftime("%m/%d/%Y %I:%M%p") %>
+	    </TD>
+	    <TD>
+	      <%= number_to_currency(x.amount, :precision => 0) %>
+	    </TD>
+	  </TR>
+	<% end %>
+      </TABLE>
+      </div>
+    </div>
+  </div>
+  <div class="onecol">
+    
+  </div>
+  <div class="fivecol last">
+    <div class="general-info">
+      <p><strong>Location: </strong><%=@borrower.city%>, <%=@borrower.state%>&nbsp;<%=@borrower.zip%></p>
+<!--      <p><strong>System Size (kW): </strong><%= @borrower.system_size%></p>  -->
+      <p><strong>System Price ($): </strong><%= number_to_currency(@borrower.system_price, :precision => 0) %></p>
+      <p><strong>Description: </strong> <%= @borrower.description %></p>
+    </div>
+    <hr/>
+    <div class="financial-info">
+      <p><strong>Total Pledges ($): </strong> <%= number_to_currency(@total_bids, :precision => 0) %></p>
+      <p><strong>Still Needed ($): </strong> 
+	<% if @borrower.system_price.to_i - @total_bids.to_i > 0%>
+	  <%= number_to_currency(@borrower.system_price.to_i - @total_bids.to_i, :precision => 0) %>
+	<% else %>
+	  <Font Color=RED>FUNDED!</FONT>
+	<% end %>
+      </p>
+      <p><strong>Time Left: </strong> 
+	<% if @borrower.system_price.to_i - @total_bids.to_i > 0%>
+	  <%=((@borrower.expiration_date - Time.now()) / 86400).round(2) %> days
+	<% else %>
+	  <Font Color=RED>FUNDED!</FONT>
+	<% end %>
+      </p>
+      <p><strong>Expires: <%= @borrower.expiration_date.to_date.to_formatted_s %></strong> </p>
+    </div>
+    <hr />
+    <div class="investing-info">
+      <h2>Invest in this Project</h2>
+      <% if @borrower.system_price.to_i - @total_bids.to_i > 0%>
+	<% form_tag url_for(:controller=> "lender", :action => "invest", :id => @borrower.id), :method => "post" do %>
+	  <p>
+	  <%= label_tag :investment_amount,"Investment Amount:$" %>&nbsp;&nbsp;&nbsp; <%= text_field "amount", "", :size =>5 %>
+	  </p>
+	  <p class="right-side">
+	    <%= submit_tag("INVEST", :class => "round-corners green") %>
+	  </p>
+        <% end %>
+      <% end %>
+    </div>
+    <hr />
+    <div class="bottom-info">
+      <p class="right-side">
+	<%= link_to("#{image_tag('/images/envelope_icon.png')} Email This Listing To A Friend", :controller => "email", :action => "email_share_project", :id => @borrower.id) %>
+      </p>
+    </div>
+  </div>
+</div>

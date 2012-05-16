@@ -1,0 +1,73 @@
+<center>
+<B><Font Size=5>Administrative Menu</Font></B>
+<BR><BR>
+
+<TABLE Border=0>
+<TR>
+<TD>
+<%= link_to "View Installers", :controller => "manage", :action => "list_installers" %>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<%= link_to "View Installer Applications", :controller => "manage", :action => "list_installer_applications" %>
+</TD>
+</TR>
+
+<TR>
+<TD>
+&nbsp;
+</TD>
+</TR>
+
+<TR>
+<TD>
+<%= link_to "View Borrower Applications", :controller => "manage", :action => "list_borrower_applications" %>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<%= link_to "View Borrowers", :controller => "manage", :action => "list_borrowers" %>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<%= link_to "View Fully Subscribed Borrowers", :controller => "manage", :action => "list_fully_subscribed" %>
+</TD>
+</TR>
+
+<TR>
+<TD>
+&nbsp;
+</TD>
+</TR>
+
+<TR>
+<TD>
+<%= link_to "View Lenders", :controller => "manage", :action => "list_lenders" %>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<%= link_to "View Lender Applications", :controller => "manage", :action => "list_lender_applications" %>
+</TD>
+</TR>
+
+<TR>
+<TD>
+&nbsp;
+</TD>
+</TR>
+
+<TR>
+<TD>
+<%= link_to "View Borrower Payments That Are Due", :controller => "manage", :action => "list_pending_borrower_payments" %>
+</TD>
+</TR>
+
+</TABLE>
+</center>

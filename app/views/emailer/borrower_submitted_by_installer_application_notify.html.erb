@@ -1,0 +1,10 @@
+NEW BORROWER APPLICATION RECEIVED VIA INSTALLER.
+
+Borrower ID: <%=@borrower_id%>
+First Name: <%=@first_name%>
+Last Name: <%=@last_name%>
+E-Mail: <%=@email%>
+Installer ID: <%=@installer_id%>
+Installer Company Name: <%= Installer.find(@installer_id).company_name%>
+
+Time = <%=Time.now%>

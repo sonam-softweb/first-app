@@ -1,0 +1,19 @@
+<!-- You are a member of:
+<BR><BR> -->
+<%if @user_borrowers.empty? == false %>
+<!--	Borrower<BR> -->
+	<%= render :partial => "menu_borrower" %>
+<%end%>
+<%if @user_lenders.empty? == false %>
+<!--	Lender<BR> -->
+	<%= render :partial => "menu_lender" %>
+<%end%>
+<%if @user_installers.empty? == false %>
+<!--	Installer<BR> -->
+	<%= render :partial => "menu_installer" %>
+<%end%>
+<%if @user_managers.empty? == false %>
+<!--	Manager<BR> -->
+	<%= render :partial => "menu_manage" %>
+<%end%>
+<BR><BR>

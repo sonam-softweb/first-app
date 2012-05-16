@@ -1,0 +1,42 @@
+<%= render :partial => "login_logout" %>
+<center>
+<Font Size=5><%= @installer.company_name%></Font><BR>
+Installer Details<BR><BR>
+
+<TABLE Border=1>
+<TR Align=center>
+<TD>
+Address:
+</TD>
+<TD>
+<%= @installer.street_address%><BR>
+<%= @installer.city%>, <%= @installer.state%> <%= @installer.zip%>
+</TD>
+<TD>
+Website:
+</TD>
+<TD>
+	<% @website_url = /^http/.match(@installer.website) ? @installer.website : "http://#{@installer.website}"%>
+<%= link_to(@installer.website, @website_url, :target => "_blank") %>
+</TD>
+</TR>
+</TABLE>
+<BR><BR>
+
+Open Listings
+
+<TABLE Border=1>
+<% @borrowers.each do |x| %>
+<TR>
+<TD>
+<%= link_to x.headline, :controller=> "borrower", :action => "show", :id => x.id %>
+
+</TD>
+</TR>
+<% end %>
+</TABLE>
+
+<BR>
+<%= link_to("I would like to register as an installer", :controller => "app", :action => "installer") %><BR>
+</center>
+

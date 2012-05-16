@@ -1,0 +1,118 @@
+<%#= render :partial => "login_logout" %>
+
+<center>
+<B><Font Size=4>Edit Lender Application</Font></B>
+<BR><BR>
+
+<Font Size=2><%= link_to "Approve This Lender Application", { :controller => "manage", :action => "approve_lender_application", :id => @lender_application.id }, :confirm => "Are you sure you want to approve this lender application?"%></Font>
+<BR><BR>
+<%= error_messages_for 'lender_application' %>
+<% form_for :lender_application do |a| %>
+	<Table Border=0>
+	<TR>
+	<TD Align=right>
+	First Name:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :first_name %>
+	</TD>
+	</TR>
+	
+	<TR>
+	<TD Align=right>
+	Last Name:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :last_name %>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD Align=right>
+	E-Mail Address:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :email %>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD Align=right>
+	Street Address:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :street_address %>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD Align=right>
+	City:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :city %>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD Align=right>
+	State:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :state %>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD Align=right>
+	Zip Code:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :zip %>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD Align=right>
+	Phone:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :phone %>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD Align=right>
+	Social Security Number:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field(:ss, :size=>8) %>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD Align=right>
+	Our Notes:
+	</TD>
+	<TD Align=left>
+	<%= a.text_area :our_notes, :rows => 4, :columns => 60 %>
+	</TD>
+	</TR>
+	
+
+	<TR>
+	<TD Colspan=2 align=center>
+<BR>
+	<%= submit_tag "  *** UPDATE RECORD ***   " %>
+	</TD>
+	</TR>
+		
+	</Table>
+<% end %>
+<BR>
+<Font Size=2><%= link_to "Deny This Lender Application", { :controller => "manage", :action => "deny_lender_application", :id => @lender_application.id }, :confirm => "Are you sure you want to deny this lender application?"%></Font>
+<BR><BR>
+<%= link_to "Main Menu", :controller => "manage", :action => "index" %><BR>
+<%#= Time.now.strftime("%D %I:%M:%S %p")%>
+<%= Time.now.strftime("%m/%d/%Y")%>&nbsp;&nbsp;<%= Time.now.strftime("%I:%M%p")%>
+</center>

@@ -1,0 +1,72 @@
+<div class="">
+  <h1>Edit Application</h1>
+  <% form_for @borrower, :url => {:action => "update"}, :html => { :multipart => true } do |a| %>
+  <%= a.error_messages %>
+  <p>
+    <%= a.label :first_name %><br />
+    <%= a.text_field :first_name %>  
+  </p>
+  <p>
+    <%= a.label :last_name %><br />
+    <%= a.text_field :last_name %>  
+  </p>
+  <p>
+    <%= a.label :email %><br />
+    <%= a.text_field :email %>  
+  </p>
+  <p>
+    <%= a.label :headline %><br />
+    <%= a.text_field :headline %>  
+  </p>
+  <p>
+    <%= a.label :description %><br />
+    <%= a.text_area :description %>  
+  </p>
+  <div class="row">
+    <div class="sixcol">
+      <div class="newPaperclipFiles">
+	<h2>Add New Photos</h2>
+
+	<% a.fields_for :photos do |asset| %>
+	  
+	  <% if asset.object.new_record? %>
+	    <p>
+	      <%= asset.label :photo, "Photo File" %>
+              <%= asset.file_field :photo %>
+	    </p>
+	    <p>
+	      <%= asset.label :description, "Photo Description: " %>
+	      <%= asset.text_field :description %>
+	    </p>
+	  <% end %>
+
+	<% end %>
+
+      </div>
+      
+    </div>
+
+    <div class="existingPaperclipFiles sixcol last">
+	<h2>Your Photos</h2>
+      
+      <% a.fields_for :photos do |asset| %>
+	
+	<% unless asset.object.new_record? %>
+          
+          <div class="thumbnail">
+            <%= link_to( image_tag(asset.object.photo.url(:thumb)), asset.object.photo.url(:original) ) %>
+            <%= asset.check_box :_destroy %> (Delete Image?)
+          </div>
+          
+	<% end %>        
+	
+      <% end %>
+    </div>
+  </div>
+  
+  </div>
+  <p>
+    <%= a.submit "  *** UPDATE RECORD ***   " %>  
+  </p>
+<% end %>
+</div>

@@ -1,0 +1,47 @@
+  <div class="row round-corners index-page">
+    <h1>Borrower Menu</h1>
+    <div class="sevencol">
+      
+      <% if @borrower.status == "Displayed" %>
+	<% if @borrower.system_price.to_i - @bids.to_i > 0%>
+	  <h2>Still Needed: <span><%= number_to_currency(@borrower.system_price.to_i - @bids.to_i, :precision => 0) %></span></h2>
+	  <p>&nbsp;</p>
+	  <h2>Time Left: <span>
+	    <%=((@borrower.expiration_date - Time.now()) / 86400).round(2) %> days </span>
+	  </h2>
+	<% else %>
+	  <h3 class="funded">Funded!</h3>
+	<% end %>
+	<p>&nbsp;</p>
+	<h2>Let Everybody Know!</h2>
+	<p>
+	  Reach out to your network to help generate interest in your loan.
+	</p>
+	<p>
+	  <%= link_to("#{image_tag('/images/envelope_icon.png')} Email my loan to friends and family", :controller => "email", :action => "email_share_project", :id => session[:current_user_borrower_id]) %>
+	</p>
+      <% elsif @borrower.status == "Under Review" %>
+	<h2>Current Status: <%= @borrower.status %></h2>
+	<p>
+	  <%= link_to("Edit Application", edit_borrower_path(session[:current_user_borrower_id])) %>
+	</p>
+
+      <% else %>
+	<h2>Current Status: <%= @borrower.status %></h2>
+      <% end %>
+
+    </div>
+    <div class="fourcol index-side">
+      <% unless @borrower.photos.blank? %>
+	<div>
+	  <%= image_tag @borrower.photos.first.photo.url(:thumb) %>
+	</div>
+	<% else %>
+	  <h3>You have not uploaded any Images</h3>
+
+	  <% end %>
+
+      <small><%= link_to("Edit My Information", edit_borrower_path(session[:current_user_borrower_id])) %></small>
+    </div>
+
+  </div>

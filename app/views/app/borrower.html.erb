@@ -1,0 +1,202 @@
+<% if params[:p] == Digest::SHA1.hexdigest(@borrower.email.to_s + "secret" + @borrower.installer_id.to_s) %>
+	<%= render :partial => "login_logout" %>
+
+	<center>
+	<font size=3><b>Submit a New Project Application</b></font><BR><BR>
+	<%= error_messages_for 'borrower' %>
+	<% form_for :borrower, :url => {:action => "borrower_process"}, :html => {:multipart => true} do |a| %>
+		<Table Border=0>
+		<TR>
+		<TD Align=right>
+		First Name:
+		</TD>
+		<TD Align=left>
+		<%= a.text_field :first_name %>
+		</TD>
+		</TR>
+		
+		<TR>
+		<TD Align=right>
+		Last Name:
+		</TD>
+		<TD Align=left>
+		<%= a.text_field :last_name %>
+		</TD>
+		</TR>
+	
+		<TR>
+		<TD Align=right>
+		Screen Name (publicly viewable):
+		</TD>
+		<TD Align=left>
+		<%= a.text_field :screen_name %>
+		</TD>
+		</TR>
+	
+		<TR>
+		<TD Align=right>
+		E-Mail Address:
+		</TD>
+		<TD Align=left>
+		<%= a.text_field :email %>
+		</TD>
+		</TR>
+	
+		<TR>
+		<TD Align=right>
+		Headline:
+		</TD>
+		<TD Align=left>
+		<%= a.text_field :headline, :maxlength => 40, :size => 30 %>
+		</TD>
+		</TR>
+	
+		<TR>
+		<TD Align=right>
+		Description:
+		</TD>
+		<TD Align=left>
+		<%= a.text_area :description, :maxlength => 400, :size => "30x5" %>
+		</TD>
+		</TR>
+	
+		<TR>
+		<TD Align=right>
+		Street Address:
+		</TD>
+		<TD Align=left>
+		<%= a.text_field :street_address %>
+		</TD>
+		</TR>
+	
+		<TR>
+		<TD Align=right>
+		City:
+		</TD>
+		<TD Align=left>
+		<%= a.text_field :city %>
+		</TD>
+		</TR>
+	
+		<TR>
+		<TD Align=right>
+		State:
+		</TD>
+		<TD Align=left>
+		<%= a.text_field :state %>
+		</TD>
+		</TR>
+	
+		<TR>
+		<TD Align=right>
+		Zip Code:
+		</TD>
+		<TD Align=left>
+		<%= a.text_field :zip %>
+		</TD>
+		</TR>
+	
+		<TR>
+		<TD Align=right>
+		Phone:
+		</TD>
+		<TD Align=left>
+		<%= a.text_field :phone %>
+		</TD>
+		</TR>
+	
+		<TR>
+		<TD Align=right>
+		System Size (kW):
+		</TD>
+		<TD Align=left>
+		<%#= a.text_field :system_size %>
+		<%= @borrower.system_size %>
+		</TD>
+		</TR>
+	
+		<TR>
+		<TD Align=right>
+		System Price ($):
+		</TD>
+		<TD Align=left>
+		<%#= a.text_field :system_price %>
+		<%= @borrower.system_price %>
+		</TD>
+		</TR>
+	
+	<!--
+		<TR>
+		<TD Align=right>
+		Social Security Number:
+		</TD>
+		<TD Align=left>
+		<%= a.text_field(:ss, :size=>8) %>
+		</TD>
+		</TR>
+	
+		<TR>
+		<TD Align=right>
+		Credit Card Number:
+		</TD>
+		<TD Align=left>
+		<%= a.text_field :cc_number %>
+		</TD>
+		</TR>
+	
+		<TR>
+		<TD Align=right>
+		Credit Card Expiration Date:
+		</TD>
+		<TD Align=left>
+		<%= a.text_field :cc_expiration %>
+		</TD>
+		</TR>
+	
+		<TR>
+		<TD Align=right>
+		Credit Card CID:
+		</TD>
+		<TD Align=left>
+		<%= a.text_field :cc_cid %>
+		</TD>
+		</TR>
+	
+	
+	
+	
+		<input id="photos[photo]" name="[photos][photo]" size="30" type="file" />
+	-->
+	
+		<TR>
+		<TD Align=right>
+		Image:
+		</TD>
+		<TD Align=left>
+		<%# a.fields_for :photos_attributes do |builder| %>
+		<%# a.fields_for :photos do |builder| %>
+			<%#= builder.text_field :caption %>
+			<%#= builder.file_field :photo %>
+		<%# end %>
+	
+		<%= a.file_field :photo %>
+		</TD>
+		</TR>
+	
+	
+		<TR>
+		<TD Colspan=2 align=center>
+	<BR>
+		<%= hidden_field_tag "p", params[:p]%>
+		<%= hidden_field_tag "id", params[:id]%>
+		<%= submit_tag(value = "   *** SUBMIT APPLICATION ***   ") %>
+		</TD>
+		</TR>
+			
+		</Table>
+	<% end %>
+	</center>
+	
+<% else %>
+You entered an invalid page.
+<% end %>

@@ -1,0 +1,6 @@
+*.LCK
+*.log
+tmp/
+config/database.yml
+log/*
+public/system/*

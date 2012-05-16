@@ -1,0 +1,132 @@
+<center>
+<font size=3><b>Submit a New Installer Application</b></font><BR><BR>
+<%= error_messages_for 'installer' %>
+<% form_for :installer do |a| %>
+	<Table Border=0>
+	<TR>
+	<TD Align=right>
+	Company Name:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :company_name %>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD Align=right>
+	First Name:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :first_name %>
+	</TD>
+	</TR>
+	
+	<TR>
+	<TD Align=right>
+	Last Name:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :last_name %>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD Align=right>
+	Screen Name:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :screen_name %>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD Align=right>
+	E-Mail Address:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :email %>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD Align=right>
+	Website:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :website %>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD Align=right>
+	Street Address:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :street_address %>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD Align=right>
+	City:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :city %>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD Align=right>
+	State:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :state %>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD Align=right>
+	Zip Code:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :zip %>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD Align=right>
+	Phone:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :phone %>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD Align=right>
+	Fax:
+	</TD>
+	<TD Align=left>
+	<%= a.text_field :fax %>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD Align=right>
+	Comments (optional):
+	</TD>
+	<TD Align=left>
+	<%= a.text_area :applicant_comments, :rows => 4, :columns => 60 %>
+	</TD>
+	</TR>
+
+
+	<TD Colspan=2 align=center>
+<BR>
+	<%= submit_tag(value = "   *** SUBMIT APPLICATION ***   ") %>
+	</TD>
+	</TR>
+		
+	</Table>
+<% end %>
+</center>

@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<style type="text/css">
+
+		body { font-family:"Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial; }
+		.hbg-show-button { margin-top:5px; background-color:#ccc; border:2px outset #999; cursor:pointer; display:block; padding:0 1em; width:85px; }
+		.hbg-bar { padding-left: 2px; color: #fff; background-color: #600; }
+		.hbg-bar, .hbg-title { margin-bottom: 1px; }
+	</style>
+</head>
+
+<body>
+
+	<div class="graph" id="multi-value-graph">
+		<dl>
+      <dd>15</dd><dd>10</dd><dd>75</dd>
+		</dl>
+	</div>
+
+	<script type="text/javascript">
+	jQuery(function() {
+		jQuery("#multi-value-graph dl").horizontalBarGraph({
+			colors: ["#c22", "#999", "#2c2"],
+			hoverColors: [ "#f33", "#ccc", "#6d6" ],
+			interval: 0.5});
+	});
+	</script>
+
+</body>
+</html>
+

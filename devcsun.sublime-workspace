@@ -1,0 +1,818 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"border-bo",
+				"boorder-bottom"
+			],
+			[
+				"le",
+				"left"
+			],
+			[
+				"ur",
+				"url_list"
+			],
+			[
+				"url",
+				"urls_path"
+			],
+			[
+				"is",
+				"is_mfi_admin"
+			],
+			[
+				"deli",
+				"delinquent"
+			],
+			[
+				"r",
+				"r	attr_reader .."
+			],
+			[
+				"id",
+				"id"
+			],
+			[
+				"mfi",
+				"mfi"
+			],
+			[
+				"l",
+				"l"
+			],
+			[
+				"update",
+				"update_attribute"
+			],
+			[
+				"MA",
+				"ManageInventory"
+			],
+			[
+				"enter",
+				"entrepreneur_name"
+			],
+			[
+				"tr",
+				"true"
+			],
+			[
+				"in",
+				"interest_amount"
+			],
+			[
+				"principa",
+				"principal_amount"
+			],
+			[
+				"bra",
+				"branch"
+			],
+			[
+				"pri",
+				"principal_amount"
+			],
+			[
+				"u",
+				"u"
+			],
+			[
+				"pr",
+				"products"
+			],
+			[
+				"Produ",
+				"Product"
+			],
+			[
+				"installmen",
+				"InstallmentRecord"
+			],
+			[
+				"re",
+				"remaining_amount"
+			],
+			[
+				"remai",
+				"remaining_interest"
+			],
+			[
+				"val",
+				"value"
+			],
+			[
+				"s",
+				"script"
+			],
+			[
+				"text",
+				"text_field"
+			],
+			[
+				"i",
+				"i"
+			],
+			[
+				"updat",
+				"update_attribute"
+			],
+			[
+				"item",
+				"item"
+			],
+			[
+				"ri",
+				"right_content"
+			],
+			[
+				"bottom",
+				"border-bottom"
+			],
+			[
+				"ma",
+				"margin	margin: T R B L"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "config/environment.rb",
+			"settings":
+			{
+				"buffer_size": 2380,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/models/user.rb",
+			"settings":
+			{
+				"buffer_size": 693,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "db/migrate/20110527231911_create_users.rb",
+			"settings":
+			{
+				"buffer_size": 3504,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "db/migrate/20120515135127_add_authlogic_filed_to_user.rb",
+			"settings":
+			{
+				"buffer_size": 1798,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Ruby/Ruby.sublime-build",
+	"command_palette":
+	{
+		"height": 285.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 530.0
+	},
+	"console":
+	{
+		"height": 146.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/narayan/Esha/Projects/devcsun/vendor/plugins/authlogic/Gemfile",
+		"/home/narayan/Esha/Projects/devcsun/vendor/plugins/authlogic/VERSION.yml",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/controllers/home_controller.rb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/public/stylesheets/style.css",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/views/loans/_loan_payment_details.haml",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/views/loans/index.haml",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/controllers/dtui_controller.rb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/models/manage_inventory.rb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/config/database.yml",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/models/product.rb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/models/user.rb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/models/transfer_inventory.rb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/views/loans/_edited_details.html.erb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/models/sale.rb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/models/branch.rb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/controllers/loans_controller.rb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/views/home/dashboard.haml",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/views/loans/edit.html.erb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/views/loans/installment_record_edit_form.js.erb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/views/loans/form.html.erb",
+		"/home/narayan/Esha/merul_project/m3_tenant_dev/config/database.yml",
+		"/home/narayan/Esha/Projects/its_onions/development/config/routes.rb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/comments/new.html.erb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/reviews/show.html.erb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/controllers/comments_controller.rb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/news_datas/edit.html.erb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/news_datas/new.html.erb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/models/review.rb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/models/comment.rb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/models/news_data.rb",
+		"/home/narayan/Esha/Projects/its_onions/development/db/migrate/20120509065039_add_column_to_comment.rb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/reviews/new.html.erb",
+		"/home/narayan/Esha/Projects/its_onions/development/db/migrate/20120503070851_add_category_id_to_movie.rb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/news/new.html.erb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/controllers/news_controller.rb",
+		"/home/narayan/Esha/Projects/test_app/app/controllers/my_datas_controller.rb",
+		"/home/narayan/Esha/Projects/test_app/app/views/my_datas/new.html.erb",
+		"/home/narayan/Esha/Projects/test_app/public/javascripts/application.js",
+		"/home/narayan/Esha/Projects/test_app/public/stylesheets/scaffold.css",
+		"/home/narayan/Esha/Projects/test_app/app/views/layouts/my_datas.html.erb",
+		"/home/narayan/Esha/Projects/test_app/app/models/my_data.rb",
+		"/home/narayan/Esha/Projects/test_app/app/models/url.rb",
+		"/home/narayan/Esha/Projects/test_app/app/views/layouts/urls.html.erb",
+		"/home/narayan/Esha/Projects/test_app/app/views/urls/new.html.erb",
+		"/home/narayan/Esha/Projects/test_app/app/controllers/urls_controller.rb",
+		"/home/narayan/Esha/Projects/test_app/config/routes.rb",
+		"/home/narayan/Esha/Projects/test_app/config/database.yml",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/models/mfi_product_order.rb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/public/javascripts/rails.js",
+		"/home/narayan/Esha/Projects/test_app/db/migrate/20120508094348_create_urls.rb",
+		"/home/narayan/Esha/Projects/test_app/public/index.html",
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/layouts/news.html.erb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/db/migrate/20111105201132_add_phone_to_user.rb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/db/migrate/20120412074947_add_loan_fields.rb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/db/migrate/20120507064444_add_uuid_in_sale.rb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/models/loan.rb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/models/loan_repayment.rb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/models/movie.rb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/models/user_photo.rb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/models/user.rb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/controllers/users_controller.rb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/controllers/movies_controller.rb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/movies/show.html.erb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/users/edit.html.erb",
+		"/home/narayan/Esha/Projects/its_onions/development/config/environment.rb",
+		"/home/narayan/Esha/Projects/its_onions/development/Gemfile",
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/reviews/index.rxml",
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/movies/index.html.erb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/controllers/contacts_controller.rb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/user_mailer/contact.html.erb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/models/user_mailer.rb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/models/contact.rb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/reviews/index.html.erb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/contacts/new.html.erb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/user_mailer/signup_notification.erb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/reviews/show.rxml",
+		"/home/narayan/Esha/Projects/its_onions/development/app/controllers/reviews_controller.rb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/controllers/ratings_controller.rb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/movies/index.rxml",
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/movies/search.rxml",
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/movies/show.rxml",
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/movies/new.html.erb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/movies/edit.html.erb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/controllers/categories_controller.rb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/comments/show.html.erb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/models/category.rb",
+		"/home/narayan/Esha/Projects/its_onions/development/vendor/plugins/attachment_fu/README",
+		"/home/narayan/Esha/Projects/its_onions/development/spec/fixtures/movies.yml",
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/comments/edit.html.erb",
+		"/home/narayan/Esha/Projects/its_onions/development/spec/controllers/movies_controller_spec.rb",
+		"/home/narayan/Esha/Projects/its_onions/development/db/migrate/20111007101617_add_trailer_to_movies.rb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/layouts/application.html.erb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/layouts/categories.html.erb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/models/mfi.rb",
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/reviews/edit.html.erb",
+		"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/config/routes.rb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/config/initializers/dtui/forms/sales.rb",
+		"/home/narayan/Esha/Projects/its_onions/development/spider.rb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/controllers/application_controller.rb",
+		"/home/narayan/.gvfs/sftp on 192.168.3.94/home/rakshitj/its_onions/development/app/views/layouts/application.html.erb",
+		"/home/narayan/.gvfs/sftp on 192.168.3.94/home/rakshitj/its_onions/development/app/views/movies/index.html.erb",
+		"/home/narayan/.gvfs/sftp on 192.168.3.94/home/rakshitj/its_onions/development/app/views/layouts/application1.html.erb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/models/role.rb",
+		"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app/views/users/sessions/new.html.erb",
+		"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app/views/accounts/canceled.html.erb",
+		"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app/views/content/index.html.erb",
+		"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app/views/saas_admin/accounts/index.html.erb",
+		"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app/views/accounts/new.html.erb",
+		"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app/controllers/users_controller.rb",
+		"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app/controllers/saas_admin/accounts_controller.rb",
+		"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app/views/accounts/billing.html.erb",
+		"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app/views/accounts/cancel.html.erb",
+		"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app/views/users/new.html.erb",
+		"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app/views/users/_form.html.erb",
+		"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/config/saas.yml",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/views/home/_dashboard_data.haml",
+		"/home/narayan/Esha/Projects/its_onions/development/db/seeds.rb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/models/installment_record.rb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/helpers/loans_helper.rb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/db/migrate/20120501095052_remove_user_email_index.rb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/db/migrate/20110720203512_devise_create_users.rb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/views/loans/_confirm.html.erb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/views/loans/confirm.js.erb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/views/loans/loan_payment_details.js.erb",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/views/home/_transfer_inventory.html.haml",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/views/dtui/_docui_init.html.haml",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/views/home/overview.html.haml",
+		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/views/dtui/dtui_form.html.haml"
+	],
+	"find":
+	{
+		"height": 66.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/home/narayan/Esha/Projects/impact/young-sky-68741/app/models",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741/app/controllers",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741/app",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741",
+			"/home/narayan/Esha/Projects/its_onions/development/app/controllers",
+			"/home/narayan/Esha/Projects/its_onions/development/app/models",
+			"/home/narayan/Esha/Projects/its_onions/development/app/views/users",
+			"/home/narayan/Esha/Projects/its_onions/development/app/views",
+			"/home/narayan/Esha/Projects/its_onions/development/app",
+			"/home/narayan/Esha/Projects/its_onions/development/app/views",
+			"/home/narayan/Esha/Projects/its_onions/development",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741/app",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741/app/models",
+			"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741",
+			"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741/app/models",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741/public/javascripts",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741/app",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741/app",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741/public/javascripts",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741",
+			"/home/narayan/Esha/Projects/its_onions/development",
+			"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand",
+			"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/spec",
+			"/home/narayan/Esha/Projects/its_onions/development",
+			"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/iKonverse/features",
+			"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/iKonverse",
+			"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/iKonverse/features",
+			"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand",
+			"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app",
+			"/home/narayan/Esha/Projects/its_onions/development",
+			"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/iKonverse/features/step_definitions",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741/app",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741/app/controllers",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741/app/models",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741/app",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741",
+			"/home/narayan/Esha/Projects/its_onions/development",
+			"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand",
+			"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app",
+			"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app/controllers",
+			"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app",
+			"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand",
+			"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/iKonverse/features",
+			"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app",
+			"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand",
+			"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/iKonverse/features",
+			"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/iKonverse/features/step_definitions",
+			"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/iKonverse",
+			"/home/narayan/Esha/Projects/its_onions/development",
+			"/home/narayan/Esha/Projects/its_onions/development/app",
+			"/home/narayan/Esha/Projects/its_onions/development",
+			"/home/narayan/Esha/Projects/its_onions/development/app",
+			"/home/narayan/Esha/Projects/its_onions/development/app/views",
+			"/home/narayan/Esha/Projects/its_onions/development",
+			"/home/narayan/Esha/Projects/its_onions/development/app/controllers",
+			"/home/narayan/Esha/merul_project/m3_tenant_dev",
+			"/home/narayan/Esha/Projects/its_onions/development",
+			"/home/narayan/Esha/merul_project/m3_tenant_dev/app",
+			"/home/narayan/Esha/Projects/young-sky-6874",
+			"/home/narayan/Esha/merul_project/m3_tenant_dev/app/controllers",
+			"/home/narayan/Esha/merul_project/m3_tenant_dev/app",
+			"/home/narayan/Esha/rails3/homerun/app/controllers",
+			"/home/narayan/Esha/rails3/homerun/app",
+			"/home/narayan/Esha/rails3/homerun",
+			"/home/narayan/Esha/Projects/impact",
+			"/home/narayan/Esha/MCT/mycalltime/app/controllers",
+			"/home/narayan/Esha/Projects/young-sky-6874",
+			"/home/narayan/Esha/Projects/impact",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741/db/migrate",
+			"/home/narayan/Esha/Projects/impact/young-sky-6874/db/migrate",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741/app/controllers",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741/public/javascripts",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741/public/javascripts/dtui",
+			"/home/narayan/Esha/Projects/impact/young-sky-68741",
+			"/home/narayan/Esha/Projects/young-sky-6874/db/migrate",
+			"/home/narayan/Esha/Projects/young-sky-6874/app/views/home",
+			"/home/narayan/Esha/Projects/young-sky-6874/app/controllers",
+			"/home/narayan/Esha/Projects/young-sky-6874/public/javascripts",
+			"/home/narayan/Esha/Projects/young-sky-6874/app/views",
+			"/home/narayan/Esha/Projects/young-sky-6874/app/controllers",
+			"/home/narayan/Esha/Projects/young-sky-6874/app/views",
+			"/home/narayan/Esha/Projects/young-sky-6874/public/javascripts",
+			"/home/narayan/Esha/Projects/young-sky-6874/public",
+			"/home/narayan/Esha/Projects/young-sky-6874/config",
+			"/home/narayan/Esha/Projects/young-sky-6874/public",
+			"/home/narayan/Esha/Projects/young-sky-6874",
+			"/home/narayan/Esha/Projects/young-sky-6874/public",
+			"/home/narayan/Esha/Projects/young-sky-6874/app/views",
+			"/home/narayan/Esha/Projects/young-sky-6874/app/controllers",
+			"/home/narayan/Esha/Projects/young-sky-6874/public/javascripts",
+			"/home/narayan/Esha/Projects/young-sky-6874/config",
+			"/home/narayan/Esha/Projects/young-sky-6874/public/javascripts",
+			"/home/narayan/Esha/Projects/young-sky-6874/app/views",
+			"/home/narayan/Esha/Projects/young-sky-6874",
+			"/home/narayan/Esha/Projects/young-sky-6874/public",
+			"/home/narayan/Esha/Projects/young-sky-6874/app/views",
+			"/home/narayan/Esha/Projects/young-sky-6874/public",
+			"/home/narayan/Esha/Projects/young-sky-6874/public/javascripts",
+			"/home/narayan/Esha/Projects/young-sky-6874",
+			"/home/narayan/Esha/Projects/young-sky-6874/app/views/loans",
+			"/home/narayan/Esha/Projects/young-sky-6874/public",
+			"/home/narayan/Esha/Projects/young-sky-6874",
+			"/home/narayan/Esha/Projects/young-sky-6874/app/views",
+			"/home/narayan/Esha/Projects/young-sky-6874",
+			"/home/narayan/Esha/Projects/young-sky-6874/app/helpers",
+			"/home/narayan/Esha/Projects/young-sky-6874/app/views",
+			"/home/narayan/Esha/Projects/young-sky-6874/app/views/dtui",
+			"/home/narayan/Esha/Projects/young-sky-6874/app/views/loans",
+			"/home/narayan/Esha/Projects/young-sky-6874",
+			"/home/narayan/Esha/Projects/young-sky-6874/db/migrate",
+			"/home/narayan/Esha/Projects/young-sky-6874",
+			"/home/narayan/Esha/Projects/young-sky-6874/app/views",
+			"/home/narayan/Esha/Projects/young-sky-6874",
+			"/home/narayan/Esha/Projects/young-sky-6874/app/views",
+			"/home/narayan/Esha/Projects/young-sky-6874",
+			"/home/narayan/Esha/Projects/young-sky-6874/public/javascripts",
+			"/home/narayan/Esha/Projects/young-sky-6874",
+			"/home/narayan/Esha/Projects/young-sky-6874/app",
+			"/home/narayan/Esha/Projects/young-sky-6874"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"dependent",
+			"product",
+			"products",
+			"transfer",
+			"dtui-form-container user",
+			"      ",
+			"edit_form",
+			"find_by_sql",
+			"item = mclass.new",
+			"before_save",
+			"re",
+			"content",
+			"alert",
+			"center",
+			"Home",
+			"path",
+			"setEventListener",
+			"disableKey",
+			"root",
+			"get_by_org",
+			"overview",
+			"MfiProductOrder",
+			"MAnageInventory",
+			"impor",
+			"import",
+			"def create",
+			"uuid",
+			"fetch",
+			"uuid",
+			"def create",
+			"init",
+			"generate_uuid",
+			"generate",
+			"uuid",
+			"@item.uuid",
+			"generate_uuid",
+			"exc",
+			"def create",
+			"sale_Ty",
+			"ie_id",
+			"ie id",
+			"sup",
+			"class",
+			"validates_formate_of",
+			"photo",
+			"user",
+			"eview.user",
+			"de",
+			"Critics Priority",
+			">>>",
+			"sales_people",
+			"staff",
+			"ie_users",
+			"ie_us",
+			"curre",
+			"current",
+			"curre",
+			"Sign in",
+			"saas",
+			"sass",
+			"Sign in",
+			"mfi_id",
+			"is_ie",
+			"delin",
+			"newsstand.dev",
+			"email",
+			"error",
+			"Email",
+			"email",
+			"del",
+			"dash",
+			"sales_people",
+			"user",
+			"current_user",
+			"logger.debug",
+			"***",
+			"puts",
+			"put",
+			"admin?",
+			"ie_ad",
+			"ie",
+			"ie_ad",
+			"@config",
+			"rails",
+			"undo",
+			"trans",
+			"transfer_inventory",
+			"/home/transfer_inventory",
+			"roles",
+			"copy users",
+			"users",
+			"role",
+			"users",
+			"user",
+			"branches",
+			"new RegExp(\"^\"+i.replace(/[-[\\]{}()*+?.,\\\\^$|#\\s]/g,\"\\\\$&\")",
+			"new RegExp",
+			"new RegExp(searchText.replace(/[-[\\]{}()*+?.,",
+			"No results match",
+			"No results matched",
+			"chzn",
+			"chosen",
+			"\nchosen",
+			"chzn-drop",
+			"get",
+			"movie",
+			"moview",
+			"movies",
+			":app",
+			"trailer",
+			"login_required",
+			"sign_in",
+			"sign",
+			" # before(:each) do\n    #   sign_in @admin\n    # end",
+			"end",
+			"  ",
+			"sign_in",
+			"belo",
+			"many",
+			"app_1",
+			"selenium",
+			"selenium-webdriver",
+			"attach_file",
+			"picture",
+			"attach",
+			"fill in ",
+			" I fill in ",
+			" And I fill in "
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"LAON",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "config/environment.rb",
+					"settings":
+					{
+						"buffer_size": 2380,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								375,
+								375
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/models/user.rb",
+					"settings":
+					{
+						"buffer_size": 693,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								352,
+								352
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "db/migrate/20110527231911_create_users.rb",
+					"settings":
+					{
+						"buffer_size": 3504,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "db/migrate/20120515135127_add_authlogic_filed_to_user.rb",
+					"settings":
+					{
+						"buffer_size": 1798,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								109,
+								109
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"addcolumntoinstallmentrecords",
+				"db/migrate/20120316064031_add_column_to_installment_records.rb"
+			],
+			[
+				"adddelinquentfieldtoloan",
+				"db/migrate/20120303062013_add_delinquent_field_to_loan.rb"
+			],
+			[
+				"edite",
+				"app/views/loans/_edited_details.html.erb"
+			],
+			[
+				"edit",
+				"app/views/loans/edit.haml"
+			],
+			[
+				"rou",
+				"config/routes.rb"
+			],
+			[
+				"see",
+				"db/seeds.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 313.0,
+	"status_bar_visible": true
+}

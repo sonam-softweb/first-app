@@ -1,0 +1,122 @@
+﻿<div class="row">
+  <section class="fivecol first">
+    <div class= "round-corners" id="vid">
+      <!--<p>Video to go here!</p>-->
+      <iframe width="420" height="315" src="http://www.youtube.com/embed/ibxfUnhFyfw" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+  <aside class="featured-wrapper sevencol last">
+    <div id="featured" >
+      <ul class="ui-tabs-nav">
+	<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-1"><a href="#fragment-1"><span><br />Investors</span></a></li>
+	<li class="ui-tabs-nav-item" id="nav-fragment-2"><a href="#fragment-2"><span><br />Property Owners</span></a></li>
+	<li class="ui-tabs-nav-item" id="nav-fragment-3"><a href="#fragment-3"><span><br />Installers</span></a></li>
+      </ul>
+      <!-- First Content -->
+      <div id="fragment-1" class="ui-tabs-panel" style="">
+	<%#= image_tag('/images/lenders.jpg') %>
+	<%= link_to image_tag("lenders.jpg"), {:action => 'lenders', :controller => 'public'} %>
+	<div class="info" >
+	  <h2><%= link_to "Investors", :controller => "public", :action => "lenders" %></h2>
+	  <p>I want to help people get Solar.<BR><%= link_to "read more", :controller => "public", :action => "lenders" %></p>
+	</div>
+      </div>
+
+      <!-- Second Content -->
+      <div id="fragment-2" class="ui-tabs-panel ui-tabs-hide" style="">
+	<%#= image_tag('/images/borrowers.jpg') %>
+	<%= link_to image_tag("borrowers.jpg"), {:action => 'borrowers', :controller => 'public'} %>
+	<div class="info" >
+	  <h2><%= link_to "Property Owners", :controller => "public", :action => "borrowers" %></h2>
+	  <p>I have a Solar Project that needs funding.<BR><%= link_to "read more", :controller => "public", :action => "borrowers" %></p>
+	</div>
+      </div>
+
+      <!-- Third Content -->
+      <div id="fragment-3" class="ui-tabs-panel ui-tabs-hide" style="">
+	<%#= image_tag('/images/installers.jpg') %>
+	<%= link_to image_tag("installers.jpg"), {:action => 'installers', :controller => 'public'} %>
+	<div class="info" >
+	  <h2><%= link_to "Installers", :controller => "public", :action => "installers" %></h2>
+	  <p>I Install Solar Panels.<BR><%= link_to "read more", :controller => "public", :action => "installers" %></p>
+	</div>
+      </div>
+    </div>
+  </aside>
+  
+</div>
+<section class="row">
+ 
+  <h2>“Power BY the people!”</h2>
+  <p>
+    Churches, private schools and other non-profit organizations that are asset rich, but modest in cash holdings, want to “go green” but can’t arrange financing to make it work. What’s more, buying it outright and waiting 20 years for the return on such an investment is hard to justify for many of these organizations.
+  </p>
+  <p>
+    Now you can do something about that.
+  </p>
+  
+  <p>
+    CollectiveSun exists to help non-profit groups implement a solar energy project that lowers energy costs from day one. We can create a loan arrangement funded by your dedicated members who will then get all of their money – plus interest – back in annual increments until the debt is repaid. Non-profits need not ask them for another contribution, but rather to partner in a mutually-beneficial endeavor. Members can therefore give more for less and the organization can lower operational expenses from the moment the solar power system is turned on without draining reserves. Our transparent program literally brings together the best of both worlds!
+  </p>
+  
+  <p>
+    If you’re a non-profit that has long thought about implementing solar but didn’t think it was financially possible, talk to us. We’d like to show you how.  CollectiveSun – Investing in solar together.
+  </p>
+ 
+</section>
+
+<section class="row">
+  <div class="the-middle blue-gradient round-corners">
+    <h2>Featured Investment Opportunities</h2>
+  </div>
+</section>
+<section class="row">
+  <% unless @borrowers.blank? %>
+    <% @borrowers.each do |borrower| %>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+      jQuery('#stacked-graph-<%= borrower.id %>').tufteBar({
+      data: [
+      [[<%= borrower.bids.sum("amount").to_i %>, <%= borrower.system_price.to_i - borrower.bids.sum("amount").to_i %>], {label: ''}]
+          ],
+      colors:     ['#59A80F', '#CCCCCC']
+        });
+      });
+    </script>
+    <div class="onecol">
+      
+    </div>
+   	<div class="round-corners fivecol" id="projects">
+	
+	  <div class="project-text fivecol">
+		<a href="<%= url_for :controller=> "public", :action => "show", :id => borrower.id %>">
+	    <h2 class="top round-corners center"><%= borrower.city %>, <%= borrower.state %></h2>
+	    <p><strong><%= borrower.headline%>:&nbsp; </strong><%=truncate(borrower.description, :length => 160)  %></p>
+	    <h2><%= (borrower.expiration_date.to_date - Date.today).to_i %> days <small>left</small></h2>
+	    <p><strong>Expires: </strong><%= borrower.expiration_date.to_date.to_formatted_s %></p>
+	  </div>
+	  <div class="fivecol last">	    
+	      <p><strong>Funding Needed:</strong> <%= number_to_currency borrower.system_price %></p>
+	      <p><strong>Funding Raised: </strong><%= number_to_currency borrower.bids.sum("amount").to_i  %></p>
+	      <p>
+		<% unless borrower.photos.blank? %>
+		  <%= image_tag(borrower.photo.url(:thumb)) %>
+		<% else %>
+		  <%= image_tag('/images/solars.jpg')  %>
+		  <% end %>
+	      </p>
+		</a>
+	  </div>
+
+
+	  <div class="onecol">
+	    
+	  </div>
+	  <div class="onecol last">
+	    <div id='stacked-graph-<%= borrower.id %>' class='graph' style='width: 20px; height: 180px;'></div>
+	  </div>
+	</div>
+    <% end %>
+  <% end %>
+</section>
