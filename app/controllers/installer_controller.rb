@@ -24,6 +24,23 @@ before_filter :installer_required # You must have a user_right of "Installer"
 #		end	
 #	end
 
+	def new_installer
+		@installer = Installer.new(params[:installer])
+		if request.post?
+			# Create their password
+			#@password = random_password
+			#@password_hash = Digest::SHA1.hexdigest(@password)
+			#@installer.password = @password_hash					
+			if @installer.save			  	
+			  Emailer.deliver_installer_application("#{@installer.company_name}", "#{@installer.first_name}", "{@installer.last_name}", "#{@installer.email}")
+			  Emailer.deliver_installer_application_notify("#{@installer.company_name}", "#{@installer.first_name}", "#{@installer.last_name}", "#{@installer.email}", "#{@installer.id}", "#{@installer.applicant_comments}")
+	          redirect_to :controller => 'main', :action => 'index'
+			else
+               render :action => :new_installer
+		    end		
+
+		end	
+	end
 
 	def new_borrower
 		if request.post?
