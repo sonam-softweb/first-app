@@ -8,13 +8,18 @@ class User < ActiveRecord::Base
 #	belongs_to :installer
 #	belongs_to :borrower
 #	belongs_to :lender
+
   acts_as_authentic do |c|
-   # c.my_config_option = my_value # for available options see documentation in: Authlogic::ActsAsAuthentic
-  end # block optional
+    c.login_field = :email
+  end
 	has_many :user_rights
 
 	has_many :borrowers, :through => :user_rights
 	has_many :lenders, :through => :user_rights
 	has_many :installers, :through => :user_rights
 	has_many :managers, :through => :user_rights
+  def deliver_password_reset_instructions!
+    reset_perishable_token!
+    Emailer.deliver_password_reset_instructions(self)
+  end
 end

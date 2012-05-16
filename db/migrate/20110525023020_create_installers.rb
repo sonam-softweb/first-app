@@ -25,8 +25,7 @@ class CreateInstallers < ActiveRecord::Migration
 		t.column :client_id_pg, :integer
 		t.column :payment_method_id_pg, :integer
 
-		
-      	t.timestamps
+		t.timestamps
     end
 
 	Installer.create :email => "installer1@collectivesun.com", :first_name => "installer", :last_name => "test", :website => "www.google.com", :street_address => "123 Main Street", :city=> "San Diego", :state=> "CA", :zip => 92120, :phone=> "6195551212", :fax => "6195551213", :applicant_comments => "This looks like a neat program, how can I participate?", :our_notes => "Great Installer!", :status => "Approved", :company_name => "Awesome Installer, Inc."

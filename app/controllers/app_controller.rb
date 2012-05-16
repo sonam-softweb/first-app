@@ -7,13 +7,13 @@ class AppController < ApplicationController
 	def borrower_process
 		@borrower = Borrower.find(params[:id])
 		@borrower.status = "Under Review"
-		if params[:p] == Digest::SHA1.hexdigest(@borrower.email.to_s + "secret" + @borrower.installer_id.to_s) && @borrower.update_attributes(params[:borrower]) 
+		if params[:p] == Digest::SHA1.hexdigest(@borrower.email.to_s + "secret" + @borrower.installer_id.to_s) && @borrower.update_attributes(params[:borrower])
 			flash[:notice] = "Your application has been received.  An <B>e-mail</B> has been sent to <B><Font Color=Red>" + @borrower.email + "</B></Font> with additional information."
 			Emailer.deliver_borrower_application("#{@borrower.first_name}", "#{@borrower.last_name}", "#{@borrower.email}")
 			Emailer.deliver_borrower_application_notify("#{@borrower.first_name}", "#{@borrower.last_name}", "#{@borrower.email}", "#{@borrower.id}")
 			redirect_to :controller => 'main', :action => 'index'
 		end
-	
+
 	end
 
 	def lender
@@ -23,7 +23,7 @@ class AppController < ApplicationController
 #			@password = random_password
 #			@password_hash = Digest::SHA1.hexdigest(@password)
 #			@lender.password = @password_hash
-		
+
 			if @lender.save
 				flash[:notice] = "Your application has been received.  An <B>e-mail</B> has been sent to <B><Font Color=Red>" + @lender.email + "</B></Font> with additional information."
 
@@ -41,15 +41,12 @@ class AppController < ApplicationController
 #			@password = random_password
 #			@password_hash = Digest::SHA1.hexdigest(@password)
 #			@installer.password = @password_hash
-					
 			if @installer.save
-
 				flash[:notice] = "Your application has been received.  An <B>e-mail</B> has been sent to <B><Font Color=Red>" + @installer.email + "</B></Font> with additional information."
 				Emailer.deliver_installer_application("#{@installer.company_name}", "#{@installer.first_name}", "{@installer.last_name}", "#{@installer.email}")
 				Emailer.deliver_installer_application_notify("#{@installer.company_name}", "#{@installer.first_name}", "#{@installer.last_name}", "#{@installer.email}", "#{@installer.id}", "#{@installer.applicant_comments}")
-	
 				redirect_to :controller => 'main', :action => 'index'
 			end
-		end	
+		end
 	end
 end

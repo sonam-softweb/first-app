@@ -38,7 +38,7 @@ before_filter :manager_required # You must have a user_right of "manager"
 		@user.password = @password_hash
 		@user.installer_id = @installer_application.id
 		@user.user_type = "installer"
-				
+
 		if @user.save && @installer_application.update_attribute(:status, "Approved") && @installer_application.update_attribute(:user_id, @user.id)
 			# Create client in Payments Gateway
 			account = PaymentsGateway::MerchantAccount.new('138148', '3P0Uvj4a8V', 'B0v6xPbI3', 'n68V8A4jNXu', false)
@@ -54,7 +54,7 @@ before_filter :manager_required # You must have a user_right of "manager"
 			client.phone_number = @installer_application.phone
 			client.fax_number = @installer_application.fax
 			client.consumer_id = @user.id
-						
+
 			client_id = account.create_client(client)
 			@installer_application.update_attribute(:client_id_pg, client_id)
 
@@ -117,7 +117,7 @@ before_filter :manager_required # You must have a user_right of "manager"
 #		@borrowers = Borrower.find(:all, :conditions => ["status = ? or status = ?", "Approved", "Displayed"])
 #		@borrowers = Borrower.find(:all, :conditions => {:status => ["Approved", "Displayed", "FullySubscribed"]})
 		@borrowers = Borrower.find(:all, :conditions => {:status => ["Approved", "Displayed"]})
-						
+
 		@funded_borrowers = Borrower.find(:all, :conditions => ["status = ?", "Funded"])
 
 	end
@@ -148,7 +148,7 @@ before_filter :manager_required # You must have a user_right of "manager"
 		@user.password = @password_hash
 		@user.borrower_id = @borrower_application.id
 		@user.user_type = "borrower"
-		
+
 		if @user.save && @borrower_application.update_attribute(:status, "Approved") && @borrower_application.update_attribute(:user_id, @user.id) && @borrower_application.update_attribute(:system_price, @borrower_application.system_price.to_i + 495) && @borrower_application.update_attribute(:approval_date, Time.now()) && @borrower_application.update_attribute(:expiration_date, Time.now().advance(:days =>21))
 
 			# Send e-mail to borrower with approval notice
@@ -237,11 +237,11 @@ before_filter :manager_required # You must have a user_right of "manager"
 
 		# Update status, payment (in the borrower table)
 		if @borrower.update_attribute(:status, "Funded") && @borrower.update_attribute(:monthly_payment, payment)
-		
+
 			# Send e-mail to borrower with approval notice
 			Emailer.deliver_borrower_funded_approve("#{@borrower.id}", "#{@borrower.first_name}", "#{@borrower.email}")
 			Emailer.deliver_borrower_funded_approve_notify("#{@borrower.id}", "#{@borrower.first_name}", "#{@borrower.last_name}", "#{@borrower.email}")
-	
+
 			# Send e-mails to lenders with approval notice
 			@total_bids.each do |x|
 				Emailer.deliver_lender_funded_approve("#{x.lender.id}", "#{x.borrower.id}", "#{x.lender.first_name}", "#{x.lender.email}", "#{x.amount}" )
@@ -257,7 +257,7 @@ before_filter :manager_required # You must have a user_right of "manager"
 		end
 
 	end
-	
+
 
 ## LENDER APPLICATIONS ##
 
@@ -271,7 +271,7 @@ before_filter :manager_required # You must have a user_right of "manager"
 
 	def edit_lender_application
 		@lender_application = Lender.find(params[:id])
-		
+
 		if request.post? and @lender_application.update_attributes(params[:lender_application])
 			flash[:notice] = "Record for #{@lender_application.first_name} #{@lender_application.last_name} Updated!"
 			redirect_to :controller => 'manage', :action => 'index'
@@ -285,11 +285,16 @@ before_filter :manager_required # You must have a user_right of "manager"
 		# Create their password
 		@password = random_password
 		@password_hash = Digest::SHA1.hexdigest(@password)
-		@user.password = @password_hash
-		@user.lender_id = @lender_application.id
-		@user.user_type = "lender"
-		
-		if @user.save && @lender_application.update_attribute(:status, "Approved") && @lender_application.update_attribute(:user_id, @user.id)
+		@user.password = @password
+		@user.email = @lender_application.email
+		@user.password_confirmation = @password
+
+		#@user.email = @lender_application.email
+		#@user.lender_id = @lender_application.id
+		#@user.user_type = "lender"
+
+		if @user.save! && @lender_application.update_attribute(:status, "Approved") && @lender_application.update_attribute(:user_id, @user.id)
+			UserRight.create :user_id => @user.id, :lender_id => @lender_application.id
 			# Send e-mail to lender with approval notice
 			Emailer.deliver_lender_application_approve("#{@lender_application.first_name}", "#{@lender_application.email}", @password)
 			Emailer.deliver_lender_application_approve_notify("#{@lender_application.first_name}", "#{@lender_application.last_name}", "#{@lender_application.email}", "#{@lender_application.id}", "#{@lender_application.our_notes}")

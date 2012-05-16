@@ -22,7 +22,7 @@
 	<%= link_to (x.borrower.headline, :controller => "borrower", :action => "show", :id => x.borrower_id) %>
 	</TD>
 	<TD Align=right>
-	<%= number_to_currency(Bid.find(:all, :select => 'sum(amount) as amount', :group=>'lender_id', :conditions => {:lender_id => @current_user.lender.id, :borrower_id => x.borrower_id})[0].amount, :precision => 0) %>
+	<%= number_to_currency(Bid.find(:all, :select => 'sum(amount) as amount', :group=>'lender_id', :conditions => {:lender_id => current_user.lender.id, :borrower_id => x.borrower_id})[0].amount, :precision => 0) %>
 	</TD>
 	<TD Align=right>
 	<%= number_to_percentage(x.lender_percentage) %>

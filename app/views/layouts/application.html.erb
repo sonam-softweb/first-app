@@ -23,7 +23,7 @@
     <!-- END GOOGLE ANALYTICS -->
     <% end %>
 
-    
+
     <script type="text/javascript">
       $(document).ready(function(){
       $("#featured").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 5000, true);
@@ -45,7 +45,7 @@
 
             ruby|section|time|video".split('|');
 
-  
+
           for(var i = 0; i < html5elmeents.length; i++){
 
   				document.createElement(html5elmeents[i]);
@@ -83,12 +83,12 @@
       <p></p>
       <div class="row round-corners backdrop">
 	<div class="heading-wrapper">
-	  
+
 	  <div class="logo threecol">
 	    <%= link_to_unless_current image_tag("/images/logo.jpg"),'/public' %>
 	  </div>
 	  <div class="ninecol header-right last">
-	    
+
 	    <section>
 	      <p id="indent-right">
 		For the latest updates, sign up for our newsletter:
@@ -105,25 +105,28 @@
 	    <header class="row">
 	      <div class="login-nav">
 		<nav>
-		  <ul>		
-		    <li><%= link_to "Home", :controller => "public", :action => "index" %></li>
+		  <ul>
+		    <% if current_user %>
+          <li><%= link_to "Home", :controller => "main", :action => "index" %></li>
+
+        <%else%>
+          <li><%= link_to "Home", :controller => "public", :action => "index" %></li>
+        <%end%>
 		    <li><%= link_to "About", :controller => "public", :action => "about" %></li>
 		    <li><%= link_to "Contact Us", :controller => "public", :action => "contact" %></li>
 		    <li><%= link_to "How Its Works", :controller => "public", :action => "how_its_work" %></li>
-		    
-
-		  <% unless @current_user.blank? %>
-		    <li>
+		  <% if current_user %>
+        <li>
 		      Logged in as:
-		      <%= @current_user.first_name%>&nbsp;<%= @current_user.last_name%> | 		      
+		      <%= current_user.first_name%>&nbsp;<%= current_user.last_name%> |
 		      <em><%= link_to "(Logout)", :controller => 'account', :action => 'logout' %></em>
 		    </li>
 		  <% else %>
-		    <li><%= link_to "Sign Up", '/' %></li>
+		    <li><%= link_to "Sign Up", :controller => "lender", :action => "lender_registration" %></li>
 		    <li>
 		      <%= link_to 'Login', :controller => 'account', :action => 'login' %>
 		    </li>
-		  <% end %>		
+		  <% end %>
 
 		  </ul>
 		  <%# render "layouts/login_topper" %>
@@ -131,13 +134,13 @@
 	      </div>
 	    </header>
 	  </div>
-	  
+
 	</div>
 	<div class="container main">
 	  <%= yield %>
 	</div>
-	
-	
+
+
       </div>
       <p></p>
       <footer>
@@ -169,7 +172,7 @@
 	  <p><small>&copy; <%= Date.today.year %> CollectiveSun</small></p>
 	</section>
       </footer>
-      
+
     </div>
   </body>
 

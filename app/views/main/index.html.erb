@@ -1,10 +1,10 @@
 <!-- You are a member of:
 <BR><BR> -->
-<%if @user_borrowers.empty? == false %>
+<%if @user_borrowers && @user_borrowers.empty? == false %>
 <!--	Borrower<BR> -->
 	<%= render :partial => "menu_borrower" %>
 <%end%>
-<%if @user_lenders.empty? == false %>
+<%if @user_lenders && @user_lenders.empty? == false %>
 <!--	Lender<BR> -->
 	<%= render :partial => "menu_lender" %>
 <%end%>

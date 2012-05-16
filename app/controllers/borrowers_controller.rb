@@ -7,20 +7,20 @@ before_filter :borrower_required # You must have a user_right of "Borrower"
 #		@borrower = Borrower.find(params[:id])
 #
 #		#What kind of user is this?
-#		unless @current_user.blank?
-#			case @current_user.user_type
+#		unless current_user.blank?
+#			case current_user.user_type
 #				when "manager"
-#					@first_name = @current_user.manager.first_name
-#					@last_name = @current_user.manager.last_name
+#					@first_name = current_user.manager.first_name
+#					@last_name = current_user.manager.last_name
 #				when "installer"
-#					@first_name = @current_user.installer.first_name
-#					@last_name = @current_user.installer.last_name
+#					@first_name = current_user.installer.first_name
+#					@last_name = current_user.installer.last_name
 #				when "borrower"
-#					@first_name = @current_user.borrower.first_name
-#					@last_name = @current_user.borrower.last_name
+#					@first_name = current_user.borrower.first_name
+#					@last_name = current_user.borrower.last_name
 #				when "lender"
-#					@first_name = @current_user.lender.first_name
-#					@last_name = @current_user.lender.last_name			
+#					@first_name = current_user.lender.first_name
+#					@last_name = current_user.lender.last_name
 #			end
 #		end
 #		@total_bids =  @borrower.bids.sum("amount") || 0
@@ -60,7 +60,7 @@ before_filter :borrower_required # You must have a user_right of "Borrower"
         format.html { render :action => "edit" }
       end
     end
-    
+
   end
 
 end
