@@ -23,3 +23,11 @@ border: 5px solid #f66; }
 float: right; 
 color: #999; 
 font-size: smaller; }
+
+#type-left{
+float: left;
+}
+
+#type-right{
+float: right;
+}

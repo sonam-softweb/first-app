@@ -1,6 +1,6 @@
 class InstallerController < ApplicationController
-before_filter :login_required
-before_filter :installer_required # You must have a user_right of "Installer"
+before_filter :login_required, :except => "new_installer" 
+before_filter :installer_required, :except => "new_installer"  # You must have a user_right of "Installer"
 
 	def index
 	end

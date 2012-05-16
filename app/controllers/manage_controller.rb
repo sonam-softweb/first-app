@@ -35,11 +35,14 @@ before_filter :manager_required # You must have a user_right of "manager"
 		# Create their password
 		@password = random_password
 		@password_hash = Digest::SHA1.hexdigest(@password)
-		@user.password = @password_hash
-		@user.installer_id = @installer_application.id
-		@user.user_type = "installer"
+		@user.password = @password
+		@user.email = @installer_application.email
+		@user.password_confirmation = @password
+		#@user.installer_id = @installer_application.id
+		#@user.user_type = "installer"
 
-		if @user.save && @installer_application.update_attribute(:status, "Approved") && @installer_application.update_attribute(:user_id, @user.id)
+		if @user.save && @installer_application.update_attribute(:status, "Approved") #&& @installer_application.update_attribute(:user_id, @user.id)
+			UserRight.create :user_id => @user.id, :installer_id => @installer_application.id
 			# Create client in Payments Gateway
 			account = PaymentsGateway::MerchantAccount.new('138148', '3P0Uvj4a8V', 'B0v6xPbI3', 'n68V8A4jNXu', false)
 			client = PaymentsGateway::Client.new
@@ -64,7 +67,7 @@ before_filter :manager_required # You must have a user_right of "manager"
 			Emailer.deliver_installer_application_approve_notify("#{@installer_application.company_name}", "#{@installer_application.first_name}", "#{@installer_application.last_name}", "#{@installer_application.email}", "#{@installer_application.id}", "#{@installer_application.applicant_comments}", "#{@installer_application.our_notes}")
 
 			flash[:notice] = "Approved Application for #{@installer_application.company_name}"
-			redirect_to :controller => "manage"
+			redirect_to :controller => "manage", :action => 'index'
 
 
 		end
