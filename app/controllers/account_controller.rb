@@ -43,7 +43,7 @@ skip_before_filter :login_required
     if request.post?
       @user_session = UserSession.new(params[:user_session])
       if @user_session.save
-        session[:user_id] = current_user.id
+       # session[:user_id] = current_user.id
         flash[:notice] = 'Login Successful'
         unless session[:return_to].blank?
           redirect_to session[:return_to]

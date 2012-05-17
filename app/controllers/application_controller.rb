@@ -14,8 +14,10 @@ class ApplicationController < ActionController::Base
 
 	protected
 	def fetch_logged_in_user
+		#abort session[:user_id].inspect
+		session[:user_id] = current_user
 		return if session[:user_id].blank?
-		current_user = User.find_by_id(session[:user_id])
+		#current_user = User.find_by_id(session[:user_id])
 
 #		session[:borrower_user] = false
 #		session[:lender_user] = false
@@ -27,23 +29,23 @@ class ApplicationController < ActionController::Base
 		@user_managers = Array.new
 
 		current_user.user_rights.each do |x|
-			if ! x.borrower_id.nil?
+			if !x.borrower_id.nil?
 #				session[:borrower_user] = true
 				@user_borrowers << x.borrower_id
 				session[:current_user_borrower_id] = x.borrower_id if session[:current_user_borrower_id].nil? == true
 
 			end
-			if ! x.lender_id.nil?
+			if !x.lender_id.nil?
 #				session[:lender_user] = true
 				@user_lenders << x.lender_id
 				session[:current_user_lender_id] = x.lender_id if session[:current_user_lender_id].nil? == true
 			end
-			if ! x.installer_id.nil?
+			if !x.installer_id.nil?
 #				session[:installer_user] = true
 				@user_installers << x.installer_id
 				session[:current_user_installer_id] = x.installer_id if session[:current_user_installer_id].nil? == true
 			end
-			if ! x.manager_id.nil?
+			if !x.manager_id.nil?
 #				session[:manager_user] = true
 				@user_managers << x.manager_id
 				session[:current_user_manager_id] = x.manager_id if session[:current_user_manager_id].nil? == true

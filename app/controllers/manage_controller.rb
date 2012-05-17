@@ -148,18 +148,20 @@ before_filter :manager_required # You must have a user_right of "manager"
 		# Create their password
 		@password = random_password
 		@password_hash = Digest::SHA1.hexdigest(@password)
-		@user.password = @password_hash
-		@user.borrower_id = @borrower_application.id
-		@user.user_type = "borrower"
+		@user.password = @password
+		@user.email = @borrower_application.email
+		@user.password_confirmation = @password
+		#@user.borrower_id = @borrower_application.id
+		#@user.user_type = "borrower"
 
-		if @user.save && @borrower_application.update_attribute(:status, "Approved") && @borrower_application.update_attribute(:user_id, @user.id) && @borrower_application.update_attribute(:system_price, @borrower_application.system_price.to_i + 495) && @borrower_application.update_attribute(:approval_date, Time.now()) && @borrower_application.update_attribute(:expiration_date, Time.now().advance(:days =>21))
-
+		if @user.save && @borrower_application.update_attribute(:status, "Approved")  && @borrower_application.update_attribute(:system_price, @borrower_application.system_price.to_i + 495) && @borrower_application.update_attribute(:approval_date, Time.now()) && @borrower_application.update_attribute(:expiration_date, Time.now().advance(:days =>21))
+      UserRight.create :user_id => @user.id, :borrower_id => @borrower_application.id
 			# Send e-mail to borrower with approval notice
 			Emailer.deliver_borrower_application_approve("#{@borrower_application.first_name}", "#{@borrower_application.email}", @password)
 			Emailer.deliver_borrower_application_approve_notify("#{@borrower_application.first_name}", "#{@borrower_application.last_name}", "#{@borrower_application.email}", "#{@borrower_application.id}", "#{@borrower_application.our_notes}")
 
 			flash[:notice] = "Approved Application for #{@borrower_application.first_name} #{@borrower_application.last_name}"
-			redirect_to :controller => "manage"
+			redirect_to :controller => "manage", :action => 'index'
 		end
 
 

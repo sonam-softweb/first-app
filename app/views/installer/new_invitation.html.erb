@@ -1,0 +1,36 @@
+<center>
+<font size=3><b>Send Customer Invitation</b></font><BR><BR>
+<% form_for "invitation", :url => "/installer/new_invitation" do |a| %>
+  <Table Border=0>
+
+  <TR>
+  <TD Align=right>
+  Name:
+  </TD>
+  <TD Align=left>
+  <%= a.text_field :name %>
+  </TD>
+  </TR>
+
+
+  <TR>
+  <TD Align=right>
+  Email:
+  </TD>
+  <TD Align=left>
+  <%= a.text_field :email %>
+  </TD>
+  </TR>
+
+
+  <TR>
+  <TD Colspan=2 align=center>
+<BR>
+  <%= submit_tag(value = "   *** SUBMIT APPLICATION ***   ") %>
+  </TD>
+  </TR>
+
+  </Table>
+
+<% end %>
+</center>

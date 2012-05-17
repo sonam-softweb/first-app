@@ -1,7 +1,8 @@
   <div class="row round-corners index-page">
     <h1>Borrower Menu</h1>
     <div class="sevencol">
-      
+      <%= link_to "Change Password", :controller => "change_password", :action => "edit" %>
+
       <% if @borrower.status == "Displayed" %>
 	<% if @borrower.system_price.to_i - @bids.to_i > 0%>
 	  <h2>Still Needed: <span><%= number_to_currency(@borrower.system_price.to_i - @bids.to_i, :precision => 0) %></span></h2>
@@ -22,7 +23,7 @@
 	</p>
 	<p  style="margin-left:38px">
       <%= link_to "Change Password", :controller => "change_password", :action => "edit" %>
-    </p> 
+    </p>
       <% elsif @borrower.status == "Under Review" %>
 	<h2>Current Status: <%= @borrower.status %></h2>
 	<p>

@@ -140,34 +140,58 @@
 	"buffers":
 	[
 		{
-			"file": "config/environment.rb",
+			"file": "app/models/installer.rb",
 			"settings":
 			{
-				"buffer_size": 2380,
+				"buffer_size": 710,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/models/user.rb",
+			"file": "app/models/lender.rb",
 			"settings":
 			{
-				"buffer_size": 693,
+				"buffer_size": 864,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "db/migrate/20110527231911_create_users.rb",
+			"file": "app/controllers/installer_controller.rb",
 			"settings":
 			{
-				"buffer_size": 3504,
+				"buffer_size": 3602,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "db/migrate/20120515135127_add_authlogic_filed_to_user.rb",
+			"file": "app/controllers/lender_controller.rb",
 			"settings":
 			{
-				"buffer_size": 1798,
+				"buffer_size": 3556,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/views/lender/lender_registration.html.erb",
+			"settings":
+			{
+				"buffer_size": 2599,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/main/_menu_manage.html.erb",
+			"settings":
+			{
+				"buffer_size": 1333,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/controllers/password_resets_controller.rb",
+			"settings":
+			{
+				"buffer_size": 1312,
 				"line_ending": "Unix"
 			}
 		}
@@ -200,6 +224,42 @@
 	},
 	"file_history":
 	[
+		"/home/narayan/Esha/Projects/devcsun/config/environment.rb",
+		"/home/narayan/Esha/Projects/devcsun/app/views/installer/new_borrower.html.erb",
+		"/home/narayan/Esha/Projects/devcsun/app/views/main/index.html.erb",
+		"/home/narayan/Esha/Projects/devcsun/app/views/lender/lender_registration.html.erb",
+		"/home/narayan/Esha/Projects/devcsun/app/models/emailer.rb",
+		"/home/narayan/Esha/Projects/devcsun/app/controllers/main_controller.rb",
+		"/home/narayan/Esha/Projects/devcsun/app/controllers/password_resets_controller.rb",
+		"/home/narayan/Esha/Projects/devcsun/app/views/layouts/application.html.erb",
+		"/home/narayan/Esha/Projects/devcsun/app/controllers/account_controller.rb",
+		"/home/narayan/Esha/Projects/devcsun/config/routes.rb",
+		"/home/narayan/Esha/Projects/devcsun/app/controllers/application_controller.rb",
+		"/home/narayan/Esha/Projects/devcsun/app/views/account/login.html.erb",
+		"/home/narayan/Esha/Projects/devcsun/app/controllers/manage_controller.rb",
+		"/home/narayan/Esha/Projects/devcsun/db/migrate/20111126211239_create_user_rights.rb",
+		"/home/narayan/Esha/Projects/devcsun/app/controllers/lender_controller.rb",
+		"/home/narayan/Esha/Projects/devcsun/app/controllers/borrowers_controller.rb",
+		"/home/narayan/Esha/Projects/devcsun/app/controllers/public_controller.rb",
+		"/home/narayan/Esha/Projects/devcsun/app/controllers/user_sessions_controller.rb",
+		"/home/narayan/Esha/Projects/devcsun/app/views/app/_login_logout.html.erb",
+		"/home/narayan/Esha/Projects/devcsun/app/views/email/email_share_project.html.erb",
+		"/home/narayan/Esha/Projects/devcsun/app/views/lender/invest.html.erb",
+		"/home/narayan/Esha/Projects/devcsun/app/views/lender/loan_history.html.erb",
+		"/home/narayan/Esha/Projects/devcsun/app/models/user.rb",
+		"/home/narayan/Esha/Projects/devcsun/app/views/password_resets/edit.html.erb",
+		"/home/narayan/Esha/Projects/devcsun/app/views/password_resets/new.html.erb",
+		"/home/narayan/Esha/Projects/devcsun/db/migrate/20110525023047_create_lenders.rb",
+		"/home/narayan/Esha/Projects/devcsun/db/migrate/20110613022206_create_email_subscribers.rb",
+		"/home/narayan/Esha/Projects/devcsun/db/migrate/20120515135127_add_authlogic_filed_to_user.rb",
+		"/home/narayan/Esha/Projects/devcsun/app/controllers/installer_controller.rb",
+		"/home/narayan/Esha/Projects/devcsun/app/controllers/app_controller.rb",
+		"/home/narayan/Esha/Projects/devcsun/app/models/lender.rb",
+		"/home/narayan/Esha/Projects/devcsun/app/views/lender/bid_history.html.erb",
+		"/home/narayan/Esha/Projects/devcsun/db/migrate/20110527231911_create_users.rb",
+		"/home/narayan/Esha/Projects/devcsun/README",
+		"/home/narayan/Esha/Projects/devcsun/db/migrate/20110525023020_create_installers.rb",
+		"/home/narayan/Esha/Projects/devcsun/app/models/user_right.rb",
 		"/home/narayan/Esha/Projects/devcsun/vendor/plugins/authlogic/Gemfile",
 		"/home/narayan/Esha/Projects/devcsun/vendor/plugins/authlogic/VERSION.yml",
 		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/controllers/home_controller.rb",
@@ -291,53 +351,21 @@
 		"/home/narayan/Esha/Projects/its_onions/development/app/views/comments/edit.html.erb",
 		"/home/narayan/Esha/Projects/its_onions/development/spec/controllers/movies_controller_spec.rb",
 		"/home/narayan/Esha/Projects/its_onions/development/db/migrate/20111007101617_add_trailer_to_movies.rb",
-		"/home/narayan/Esha/Projects/its_onions/development/app/views/layouts/application.html.erb",
-		"/home/narayan/Esha/Projects/its_onions/development/app/views/layouts/categories.html.erb",
-		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/models/mfi.rb",
-		"/home/narayan/Esha/Projects/its_onions/development/app/views/reviews/edit.html.erb",
-		"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/config/routes.rb",
-		"/home/narayan/Esha/Projects/impact/young-sky-68741/config/initializers/dtui/forms/sales.rb",
-		"/home/narayan/Esha/Projects/its_onions/development/spider.rb",
-		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/controllers/application_controller.rb",
-		"/home/narayan/.gvfs/sftp on 192.168.3.94/home/rakshitj/its_onions/development/app/views/layouts/application.html.erb",
-		"/home/narayan/.gvfs/sftp on 192.168.3.94/home/rakshitj/its_onions/development/app/views/movies/index.html.erb",
-		"/home/narayan/.gvfs/sftp on 192.168.3.94/home/rakshitj/its_onions/development/app/views/layouts/application1.html.erb",
-		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/models/role.rb",
-		"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app/views/users/sessions/new.html.erb",
-		"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app/views/accounts/canceled.html.erb",
-		"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app/views/content/index.html.erb",
-		"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app/views/saas_admin/accounts/index.html.erb",
-		"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app/views/accounts/new.html.erb",
-		"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app/controllers/users_controller.rb",
-		"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app/controllers/saas_admin/accounts_controller.rb",
-		"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app/views/accounts/billing.html.erb",
-		"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app/views/accounts/cancel.html.erb",
-		"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app/views/users/new.html.erb",
-		"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/app/views/users/_form.html.erb",
-		"/home/narayan/.gvfs/sftp on 192.168.3.113/home/mehul/newsstand/config/saas.yml",
-		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/views/home/_dashboard_data.haml",
-		"/home/narayan/Esha/Projects/its_onions/development/db/seeds.rb",
-		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/models/installment_record.rb",
-		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/helpers/loans_helper.rb",
-		"/home/narayan/Esha/Projects/impact/young-sky-68741/db/migrate/20120501095052_remove_user_email_index.rb",
-		"/home/narayan/Esha/Projects/impact/young-sky-68741/db/migrate/20110720203512_devise_create_users.rb",
-		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/views/loans/_confirm.html.erb",
-		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/views/loans/confirm.js.erb",
-		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/views/loans/loan_payment_details.js.erb",
-		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/views/home/_transfer_inventory.html.haml",
-		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/views/dtui/_docui_init.html.haml",
-		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/views/home/overview.html.haml",
-		"/home/narayan/Esha/Projects/impact/young-sky-68741/app/views/dtui/dtui_form.html.haml"
+		"/home/narayan/Esha/Projects/its_onions/development/app/views/layouts/application.html.erb"
 	],
 	"find":
 	{
-		"height": 66.0
+		"height": 76.0
 	},
 	"find_in_files":
 	{
 		"height": 93.0,
 		"where_history":
 		[
+			"/home/narayan/Esha/Projects/devcsun/app",
+			"/home/narayan/Esha/Projects/devcsun/app/controllers",
+			"/home/narayan/Esha/Projects/devcsun",
+			"/home/narayan/Esha/Projects/devcsun/app/controllers",
 			"/home/narayan/Esha/Projects/impact/young-sky-68741/app/models",
 			"/home/narayan/Esha/Projects/impact/young-sky-68741/app/controllers",
 			"/home/narayan/Esha/Projects/impact/young-sky-68741/app",
@@ -461,10 +489,6 @@
 			"/home/narayan/Esha/Projects/young-sky-6874/app/views",
 			"/home/narayan/Esha/Projects/young-sky-6874",
 			"/home/narayan/Esha/Projects/young-sky-6874/app/views",
-			"/home/narayan/Esha/Projects/young-sky-6874",
-			"/home/narayan/Esha/Projects/young-sky-6874/public/javascripts",
-			"/home/narayan/Esha/Projects/young-sky-6874",
-			"/home/narayan/Esha/Projects/young-sky-6874/app",
 			"/home/narayan/Esha/Projects/young-sky-6874"
 		]
 	},
@@ -473,6 +497,22 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"appr",
+			"userright",
+			"user_rights",
+			"@user_lenders",
+			"lender",
+			"Lender",
+			"lender",
+			"@current_user",
+			"end",
+			"lende",
+			"barken@gmail.com",
+			"Headline",
+			"sign",
+			"lender",
+			"current_user_installer_id",
+			"installer",
 			"dependent",
 			"product",
 			"products",
@@ -584,23 +624,7 @@
 			":app",
 			"trailer",
 			"login_required",
-			"sign_in",
-			"sign",
-			" # before(:each) do\n    #   sign_in @admin\n    # end",
-			"end",
-			"  ",
-			"sign_in",
-			"belo",
-			"many",
-			"app_1",
-			"selenium",
-			"selenium-webdriver",
-			"attach_file",
-			"picture",
-			"attach",
-			"fill in ",
-			" I fill in ",
-			" And I fill in "
+			"sign_in"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -608,6 +632,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"current_user",
+			"esha.desai@softwebsolutions.com",
 			"LAON",
 			""
 		],
@@ -620,30 +646,28 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 6,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "config/environment.rb",
+					"file": "app/models/installer.rb",
 					"settings":
 					{
-						"buffer_size": 2380,
+						"buffer_size": 710,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								375,
-								375
+								283,
+								283
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -653,18 +677,18 @@
 				},
 				{
 					"buffer": 1,
-					"file": "app/models/user.rb",
+					"file": "app/models/lender.rb",
 					"settings":
 					{
-						"buffer_size": 693,
+						"buffer_size": 864,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								352,
-								352
+								533,
+								533
 							]
 						],
 						"settings":
@@ -679,18 +703,18 @@
 				},
 				{
 					"buffer": 2,
-					"file": "db/migrate/20110527231911_create_users.rb",
+					"file": "app/controllers/installer_controller.rb",
 					"settings":
 					{
-						"buffer_size": 3504,
+						"buffer_size": 3602,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1827,
+								1890
 							]
 						],
 						"settings":
@@ -699,30 +723,113 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 324.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "db/migrate/20120515135127_add_authlogic_filed_to_user.rb",
+					"file": "app/controllers/lender_controller.rb",
 					"settings":
 					{
-						"buffer_size": 1798,
+						"buffer_size": 3556,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								109,
-								109
+								3550,
+								3550
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 972.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/lender/lender_registration.html.erb",
+					"settings":
+					{
+						"buffer_size": 2599,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1813,
+								1813
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2160.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/views/main/_menu_manage.html.erb",
+					"settings":
+					{
+						"buffer_size": 1333,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								210,
+								210
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/controllers/password_resets_controller.rb",
+					"settings":
+					{
+						"buffer_size": 1312,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1021,
+								1021
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -764,6 +871,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 118.0
+	},
 	"replace":
 	{
 		"height": 64.0
