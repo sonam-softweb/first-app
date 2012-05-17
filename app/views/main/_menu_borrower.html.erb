@@ -20,6 +20,9 @@
 	<p>
 	  <%= link_to("#{image_tag('/images/envelope_icon.png')} Email my loan to friends and family", :controller => "email", :action => "email_share_project", :id => session[:current_user_borrower_id]) %>
 	</p>
+	<p  style="margin-left:38px">
+      <%= link_to "Change Password", :controller => "change_password", :action => "edit" %>
+    </p> 
       <% elsif @borrower.status == "Under Review" %>
 	<h2>Current Status: <%= @borrower.status %></h2>
 	<p>
