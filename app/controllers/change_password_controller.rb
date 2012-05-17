@@ -7,7 +7,7 @@ class ChangePasswordController < ApplicationController
     @user = current_user
     @user.password = params[:new_password]
     @user.password_confirmation = params[:confirm_password]
-    if @user.save  
+    if @user.valid_password?(params[:old_password]) && @user.save  
       flash[:notice] = "Password successfully updated"  
       redirect_to :controller => 'manage', :action => 'index'
     else  

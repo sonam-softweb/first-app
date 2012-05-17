@@ -1,0 +1,327 @@
+Script started on Thursday 17 May 2012 04:36:11 PM IST
+]0;sonam@PC002: ~/devcsunsonam@PC002:~/devcsun$ git status[1@r[1@u[1@b[1@y[1@ [1P[1P[1P status[1Pstatus[1Ptatus[1Patus[1Ptus[1Pus[1Ps[Kscript [K[K[K[K[K[K[K[K[K[K[K[Kscript/console
+Missing the Rails 2.3.14 gem. Please `gem install -v=2.3.14 rails`, update your RAILS_GEM_VERSION setting in config/environment.rb for the Rails version you do have installed, or comment out RAILS_GEM_VERSION to use the latest version installed.
+]0;sonam@PC002: ~/devcsunsonam@PC002:~/devcsun$ script/consolerscript/consoleuscript/consolebscript/consoleyscript/console script/console
+Missing the Rails 2.3.14 gem. Please `gem install -v=2.3.14 rails`, update your RAILS_GEM_VERSION setting in config/environment.rb for the Rails version you do have installed, or comment out RAILS_GEM_VERSION to use the latest version installed.
+]0;sonam@PC002: ~/devcsunsonam@PC002:~/devcsun$ rvm [K[K[K[Krvm use current
+system
+]0;sonam@PC002: ~/devcsunsonam@PC002:~/devcsun$ rvm current
+system
+]0;sonam@PC002: ~/devcsunsonam@PC002:~/devcsun$ rvm list
+
+rvm rubies
+
+   [32mrbx-2.3.11-rails(B[m [ x86_64 ]
+   [32mruby-1.8.7-p357(B[m [ x86_64 ]
+ * [32mruby-1.9.2-head(B[m [ x86_64 ]
+   [32mruby-1.9.2-p290(B[m [ x86_64 ]
+
+# => - current
+# =* - current && default
+#  * - default
+
+]0;sonam@PC002: ~/devcsunsonam@PC002:~/devcsun$ rvm use ruby-1.8.7-p357
+[32mUsing /home/sonam/.rvm/gems/ruby-1.8.7-p357(B[m
+]0;sonam@PC002: ~/devcsunsonam@PC002:~/devcsun$ ruby script/condole[1Polesole
+Loading development environment (Rails 2.3.14)
+>> User.first
+=> #<User id: 1, screen_name: "M1", email: "manager1@collectivesun.com", first_name: "m", last_name: "1", address: nil, city: nil, state: nil, zip: nil, phone: nil, fax: nil, password: "manager123", created_at: "2012-04-30 06:33:04", updated_at: "2012-05-17 11:04:09", login: "", crypted_password: "ffc7da5c872ca5f50abed2a21318f5d667853bb7fc35566acb9...", password_salt: "JdMNlkY4RyzZNiGHAl", persistence_token: "8d1833ff6996ef67db7b797880f5f126062843cd09b0386634f...", single_access_token: "v2BUgfFuDGW3wjeIH9q", perishable_token: "95cmGbNsrFq4YHvXgN", login_count: 23, failed_login_count: 0, last_request_at: "2012-05-17 11:04:09", current_login_at: "2012-05-17 10:58:07", last_login_at: "2012-05-17 07:11:15", current_login_ip: "127.0.0.1", last_login_ip: "127.0.0.1">
+>> User.first[C.methods
+=> ["from_json", "inspect", "errors", "forget!", "destroy", "autosave_associated_records_for_managers", "require", "to_query", "autosave_associated_records_for_user_rights", "__id__", "configurations", "attribute_for_inspect", "changes", "extend_with_included_modules_from", "reset_perishable_token", "save", "update_attributes_inside_transaction", "after_update", "partial_updates?", "timestamped_migrations", "connection_handler?", "methods", "_destroy", "validate_associated_records_for_managers", "suppress", "validate_associated_records_for_user_rights", "__send__", "lender_ids", "attribute_types_cached_by_default", "method", "save_with_validation", "query_attribute", "lender_ids=", "singleton_methods", "attribute_names", "nil?", "column_for_attribute", "attribute_present?", "lenders", "before_password_set", "disable_perishable_token_maintenance?", "save_with_dirty", "autosave_associated_records_for_lenders", "update_attributes!", "lenders=", "update_attributes", "skip_time_zone_conversion_for_attributes", "borrowers", "display", "save_without_validation", "protected_methods", "store_full_sti_class", "after_password_verification", "borrowers=", "duplicable?", "equal?", "has_attribute?", "require_library_or_gem", "installers", "store_full_sti_class=", "save_without_dirty", "validate_associated_records_for_lenders", "update_attributes_inside_transaction!", "installers=", "class_eval", "before_validation", "increment", "private_methods", "default_scoping", "reset_password", "record_timestamps", "send", "eql?", "managers", "html_safe?", "id", "remove_subclasses_of", "primary_key_prefix_type", "instance_values", "managers=", "after_validation", "id=", "cache_key", "validate_on_create", "touch", "public_methods", "instance_eval", "randomize_password", "delete", "to_xml", "id_before_type_cast", "destroyed?", "save_with_dirty!", "type", "increment!", "instance_variable_names", "before_validation_on_create", "decrement", "validate_on_update", "reset_single_access_token", "suppress_warnings", "instance_exec", "instance_variables", "require_or_load", "deliver_password_reset_instructions!", "read_attribute_before_type_cast", "readonly?", "save_without_dirty!", "class", "subclasses_of", "table_name_prefix", "reload_with_dirty", "connection", "time_zone_aware_attributes", "copy_instance_variables_from", "after_validation_on_create", "reset_password!", "instance_variable_get", "save_without_session_maintenance", "logger", "readonly!", "quoted_id", "==", "===", "clone", "after_password_set", "decrement!", "reload_without_dirty", "default_timezone", "reset_single_access_token?", "transaction", "toggle", "before_validation_on_update", "to_yaml", "instance_variable_set", "valid?", "require_association", "invalid?", "destroy_without_lock", "=~", "write_attribute", "before_save", "debugger", "dup", "table_name_suffix", "reset_perishable_token!", "installer_ids", "save_with_validation!", "respond_to_without_attributes?", "[]", "change_single_access_token_with_password?", "[]=", "try", "randomize_password!", "after_validation_on_update", "destroy_with_transactions", "encode64", "reload_with_autosave_associations", "installer_ids=", "acts_like?", "respond_to?", "validate", "valid_password?", "after_save", "breakpoint", "logged_in?", "taint", "store_full_sti_class?", "toggle!", "save_without_validation!", "nested_attributes_options", "autosave_associated_records_for_installers", "daemonize", "reset_persistence_token", "reset_single_access_token!", "clear_aggregation_cache", "run_callbacks", "destroy_without_transactions", "decode64", "instance_variable_defined?", "from_xml", "load_with_new_constant_marking", "pluralize_table_names", "valid_with_callbacks?", "validate_associated_records_for_installers", "extend", "metaclass", "save_with_transactions", "decode_b", "clear_association_cache", "to_yaml_properties", "reload_without_autosave_associations", "borrower_ids", "save!", "tainted?", "password", "logged_out?", "borrower_ids=", "untaint", "lock_optimistically", "reset_persistence_token!", "unloadable", "valid_without_callbacks?", "password=", "instance_of?", "before_destroy", "read_attribute", "metaclass_with_deprecation", "mark_for_destruction", "`", "autosave_associated_records_for_borrowers", "before_create", "colorize_logging", "before_password_verification", "freeze", "user_rights", "rollback_active_record_state!", "taguri", "connection_handler", "enable_warnings", "kind_of?", "after_destroy", "save_without_transactions", "blank?", "user_rights=", "present?", "metaclass_without_deprecation", "partial_updates", "validate_associated_records_for_borrowers", "taguri=", "object_id", "connection_handler=", "presence", "reload", "after_create", "becomes", "as_json", "partial_updates=", "to_yaml_style", "silence_stderr", "marked_for_destruction?", "is_a?", "destroy_with_callbacks", "b64encode", "lock!", "include_root_in_json", "returning", "tap", "to_enum", "silence_warnings", "frozen?", "singleton_class", "to_a", "write_attribute_without_dirty", "save_with_transactions!", "silence_stream", "changed?", "changed_for_autosave?", "destroy_without_callbacks", "new_record?", "with_options", "enum_for", "attributes", "unserializable_attribute?", "update_attribute", "locking_enabled?", "unserialize_attribute", "to_s", "attributes=", "schema_format", "to_param", "save_without_transactions!", "manager_ids", "user_right_ids", "hash", "require_dependency", "attributes_before_type_cast", "method_missing", "password_confirmation", "manager_ids=", "changed", "user_right_ids=", "extended_by", "with_transaction_returning_status", "to_json", "password_confirmation=", "before_update"]
+>> User.first.methodsyUser.first.methods[C[C[C[C User.first.methods[C[C[C[C[C
+--- 
+- from_json
+- inspect
+- errors
+- forget!
+- destroy
+- autosave_associated_records_for_managers
+- require
+- to_query
+- autosave_associated_records_for_user_rights
+- __id__
+- configurations
+- attribute_for_inspect
+- changes
+- extend_with_included_modules_from
+- reset_perishable_token
+- save
+- update_attributes_inside_transaction
+- after_update
+- partial_updates?
+- timestamped_migrations
+- connection_handler?
+- methods
+- _destroy
+- validate_associated_records_for_managers
+- suppress
+- validate_associated_records_for_user_rights
+- __send__
+- lender_ids
+- attribute_types_cached_by_default
+- method
+- save_with_validation
+- query_attribute
+- lender_ids=
+- singleton_methods
+- attribute_names
+- nil?
+- column_for_attribute
+- attribute_present?
+- lenders
+- before_password_set
+- disable_perishable_token_maintenance?
+- save_with_dirty
+- autosave_associated_records_for_lenders
+- update_attributes!
+- lenders=
+- update_attributes
+- skip_time_zone_conversion_for_attributes
+- borrowers
+- display
+- save_without_validation
+- protected_methods
+- store_full_sti_class
+- after_password_verification
+- borrowers=
+- duplicable?
+- equal?
+- has_attribute?
+- require_library_or_gem
+- installers
+- store_full_sti_class=
+- save_without_dirty
+- validate_associated_records_for_lenders
+- update_attributes_inside_transaction!
+- installers=
+- class_eval
+- before_validation
+- increment
+- private_methods
+- default_scoping
+- reset_password
+- record_timestamps
+- send
+- eql?
+- managers
+- html_safe?
+- id
+- remove_subclasses_of
+- primary_key_prefix_type
+- instance_values
+- managers=
+- after_validation
+- id=
+- cache_key
+- validate_on_create
+- touch
+- public_methods
+- instance_eval
+- randomize_password
+- delete
+- to_xml
+- id_before_type_cast
+- destroyed?
+- save_with_dirty!
+- type
+- increment!
+- instance_variable_names
+- before_validation_on_create
+- decrement
+- validate_on_update
+- reset_single_access_token
+- suppress_warnings
+- instance_exec
+- instance_variables
+- require_or_load
+- deliver_password_reset_instructions!
+- read_attribute_before_type_cast
+- readonly?
+- save_without_dirty!
+- class
+- subclasses_of
+- table_name_prefix
+- reload_with_dirty
+- connection
+- time_zone_aware_attributes
+- copy_instance_variables_from
+- after_validation_on_create
+- reset_password!
+- instance_variable_get
+- save_without_session_maintenance
+- logger
+- readonly!
+- quoted_id
+- ==
+- ===
+- clone
+- after_password_set
+- decrement!
+- reload_without_dirty
+- default_timezone
+- reset_single_access_token?
+- transaction
+- toggle
+- before_validation_on_update
+- to_yaml
+- instance_variable_set
+- valid?
+- require_association
+- invalid?
+- destroy_without_lock
+- =~
+- write_attribute
+- before_save
+- debugger
+- dup
+- table_name_suffix
+- reset_perishable_token!
+- installer_ids
+- save_with_validation!
+- respond_to_without_attributes?
+- "[]"
+- change_single_access_token_with_password?
+- "[]="
+- try
+- randomize_password!
+- after_validation_on_update
+- destroy_with_transactions
+- encode64
+- reload_with_autosave_associations
+- installer_ids=
+- acts_like?
+- respond_to?
+- validate
+- valid_password?
+- after_save
+- breakpoint
+- logged_in?
+- taint
+- store_full_sti_class?
+- toggle!
+- save_without_validation!
+- nested_attributes_options
+- autosave_associated_records_for_installers
+- daemonize
+- reset_persistence_token
+- reset_single_access_token!
+- clear_aggregation_cache
+- run_callbacks
+- destroy_without_transactions
+- decode64
+- instance_variable_defined?
+- from_xml
+- load_with_new_constant_marking
+- pluralize_table_names
+- valid_with_callbacks?
+- validate_associated_records_for_installers
+- extend
+- metaclass
+- save_with_transactions
+- decode_b
+- clear_association_cache
+- to_yaml_properties
+- reload_without_autosave_associations
+- borrower_ids
+- save!
+- tainted?
+- password
+- logged_out?
+- borrower_ids=
+- untaint
+- lock_optimistically
+- reset_persistence_token!
+- unloadable
+- valid_without_callbacks?
+- password=
+- instance_of?
+- before_destroy
+- read_attribute
+- metaclass_with_deprecation
+- mark_for_destruction
+- `
+- autosave_associated_records_for_borrowers
+- before_create
+- colorize_logging
+- before_password_verification
+- freeze
+- user_rights
+- rollback_active_record_state!
+- taguri
+- connection_handler
+- enable_warnings
+- kind_of?
+- after_destroy
+- save_without_transactions
+- blank?
+- user_rights=
+- present?
+- metaclass_without_deprecation
+- partial_updates
+- validate_associated_records_for_borrowers
+- taguri=
+- object_id
+- connection_handler=
+- presence
+- reload
+- after_create
+- becomes
+- as_json
+- partial_updates=
+- to_yaml_style
+- silence_stderr
+- marked_for_destruction?
+- is_a?
+- destroy_with_callbacks
+- b64encode
+- lock!
+- include_root_in_json
+- returning
+- tap
+- to_enum
+- silence_warnings
+- frozen?
+- singleton_class
+- to_a
+- write_attribute_without_dirty
+- save_with_transactions!
+- silence_stream
+- changed?
+- changed_for_autosave?
+- destroy_without_callbacks
+- new_record?
+- with_options
+- enum_for
+- attributes
+- unserializable_attribute?
+- update_attribute
+- locking_enabled?
+- unserialize_attribute
+- to_s
+- attributes=
+- schema_format
+- to_param
+- save_without_transactions!
+- manager_ids
+- user_right_ids
+- hash
+- require_dependency
+- attributes_before_type_cast
+- method_missing
+- password_confirmation
+- manager_ids=
+- changed
+- user_right_ids=
+- extended_by
+- with_transaction_returning_status
+- to_json
+- password_confirmation=
+- before_update
+=> nil
+>> User.first.valid_password?
+ArgumentError: wrong number of arguments (0 for 1)
+	from (irb):4:in `valid_password?'
+	from (irb):4
+>> User.first.valid_password?[C()[C[C[C[KUser.first.valid_password?()[C.valid_password?()[C[C[C[C[C[C[C[C[C[C[C[C[C[Cf.valid_password?()[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ci.valid_password?()[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn.valid_password?()d.valid_password?()_.valid_password?()b.valid_password?()y.valid_password?()_.valid_password?()[1Pt.find_by_.valid_password?()[C[C[C[C[C[C[C[C[C[C[C[1Pt.find_by_.valid_password?()[C[C[C[C[C[C[C[C[C[C[1Pt.find_by_.valid_password?()[C[C[C[C[C[C[C[C[C[1Pt.find_by_.valid_password?()[C[C[C[C[C[C[C[C[1Pt.find_by_.valid_password?()[C[C[C[C[C[C[C[1P.find_by_.valid_password?()[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce.valid_password?()m.valid_password?()a.valid_password?()i.valid_password?()l.valid_password?()(.valid_password?()).valid_password?()').valid_password?()').valid_password?()s').valid_password?()o').valid_password?()n').valid_password?()a').valid_password?()m').valid_password?()@').valid_password?()s').valid_password?()o').valid_password?()f').valid_password?()t').valid_password?()w').valid_password?()e').valid_password?()b').valid_password?()s').valid_password?()o').valid_password?()l').valid_password?()u').valid_password?()t').valid_password?()i').valid_password?()o').valid_password?()n').valid_password?()s').valid_password?().').valid_password?()c').valid_password?()o').valid_password?()m').valid_password?()[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C''[K[K')')s')o')n')a')m')1')2')3')
+=> false
+>> User.find_by_email('sonam@softwebsolutions.com').valid_password?('sonam123')[1Pm').valid_password?('sonam123')[1Pm').valid_password?('sonam123')[1Pm').valid_password?('sonam123')[1Pm').valid_password?('sonam123')[1Pm').valid_password?('sonam123')[1Pm').valid_password?('sonam123')[1Pm').valid_password?('sonam123')[1Pm').valid_password?('sonam123')[1Pm').valid_password?('sonam123')[1Pm').valid_password?('sonam123')[1Pm').valid_password?('sonam123')[1Pm').valid_password?('sonam123')[1Pm').valid_password?('sonam123')[1Pm').valid_password?('sonam123')[1Pm').valid_password?('sonam123')[1Pm').valid_password?('sonam123')[1Pm').valid_password?('sonam123')[1Pm').valid_password?('sonam123')[1Pm').valid_password?('sonam123')[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pm').valid_password?('sonam123')[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P').valid_password?('sonam123')[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pm').valid_password?('sonam123')[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pm').valid_password?('sonam123')[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pm').valid_password?('sonam123')[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pm').valid_password?('sonam123')[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P').valid_password?('sonam123')[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cm').valid_password?('sonam123')[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca').valid_password?('sonam123')[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn').valid_password?('sonam123')[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca').valid_password?('sonam123')[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cg').valid_password?('sonam123')[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce').valid_password?('sonam123')r').valid_password?('sonam123')1').valid_password?('sonam123')@').valid_password?('sonam123')c').valid_password?('sonam123')o').valid_password?('sonam123')l').valid_password?('sonam123')l').valid_password?('sonam123')e').valid_password?('sonam123')c').valid_password?('sonam123')r').valid_password?('sonam123')i').valid_password?('sonam123')v').valid_password?('sonam123')e').valid_password?('sonam123')[1P').valid_password?('sonam123')[1P').valid_password?('sonam123')[1P').valid_password?('sonam123')[1P').valid_password?('so
