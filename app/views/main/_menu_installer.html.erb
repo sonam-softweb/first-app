@@ -10,5 +10,6 @@
     <%= link_to "Switch to #{Installer.find(x).company_name}", {:controller => :main, :action => :switch_installer, :id => x} unless session[:current_user_installer_id].to_i == x%>
   </p>
 <% end%>
-  
+<%= link_to "Change Password", :controller => "change_password", :action => "edit" %>
+ 
 </div>
