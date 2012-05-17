@@ -43,10 +43,10 @@
       </div>
     </div>
   </aside>
-  
+
 </div>
 <section class="row">
- 
+
   <h2>“Power BY the people!”</h2>
   <p>
     Churches, private schools and other non-profit organizations that are asset rich, but modest in cash holdings, want to “go green” but can’t arrange financing to make it work. What’s more, buying it outright and waiting 20 years for the return on such an investment is hard to justify for many of these organizations.
@@ -54,15 +54,15 @@
   <p>
     Now you can do something about that.
   </p>
-  
+
   <p>
     CollectiveSun exists to help non-profit groups implement a solar energy project that lowers energy costs from day one. We can create a loan arrangement funded by your dedicated members who will then get all of their money – plus interest – back in annual increments until the debt is repaid. Non-profits need not ask them for another contribution, but rather to partner in a mutually-beneficial endeavor. Members can therefore give more for less and the organization can lower operational expenses from the moment the solar power system is turned on without draining reserves. Our transparent program literally brings together the best of both worlds!
   </p>
-  
+
   <p>
     If you’re a non-profit that has long thought about implementing solar but didn’t think it was financially possible, talk to us. We’d like to show you how.  CollectiveSun – Investing in solar together.
   </p>
- 
+
 </section>
 
 <section class="row">
@@ -85,33 +85,33 @@
       });
     </script>
     <div class="onecol">
-      
+
     </div>
    	<div class="round-corners fivecol" id="projects">
-	
+
 	  <div class="project-text fivecol">
 		<a href="<%= url_for :controller=> "public", :action => "show", :id => borrower.id %>">
 	    <h2 class="top round-corners center"><%= borrower.city %>, <%= borrower.state %></h2>
 	    <p><strong><%= borrower.headline%>:&nbsp; </strong><%=truncate(borrower.description, :length => 160)  %></p>
 	    <h2><%= (borrower.expiration_date.to_date - Date.today).to_i %> days <small>left</small></h2>
 	    <p><strong>Expires: </strong><%= borrower.expiration_date.to_date.to_formatted_s %></p>
-	  </div>
-	  <div class="fivecol last">	    
-	      <p><strong>Funding Needed:</strong> <%= number_to_currency borrower.system_price %></p>
-	      <p><strong>Funding Raised: </strong><%= number_to_currency borrower.bids.sum("amount").to_i  %></p>
-	      <p>
-		<% unless borrower.photos.blank? %>
-		  <%= image_tag(borrower.photo.url(:thumb)) %>
-		<% else %>
-		  <%= image_tag('/images/solars.jpg')  %>
-		  <% end %>
-	      </p>
-		</a>
-	  </div>
+    </div>
+    <div class="fivecol last">
+        <p><strong>Funding Needed:</strong> <%= number_to_currency borrower.system_price %></p>
+        <p><strong>Funding Raised: </strong><%= number_to_currency borrower.bids.sum("amount").to_i  %></p>
+        <p>
+          <% unless borrower.photos.blank? %>
+            <%= image_tag(borrower.photo.url(:thumb)) %>
+          <% else %>
+            <%= image_tag('/images/solars.jpg')  %>
+          <% end %>
+        </p>
+    </a>
+    </div>
 
 
 	  <div class="onecol">
-	    
+
 	  </div>
 	  <div class="onecol last">
 	    <div id='stacked-graph-<%= borrower.id %>' class='graph' style='width: 20px; height: 180px;'></div>

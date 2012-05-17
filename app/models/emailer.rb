@@ -72,14 +72,23 @@ class Emailer < ActionMailer::Base
 		sent_on= Time.now
 	end
 
-	def borrower_submitted_by_installer_application(first_name, last_name, recipient, borrower_id, installer_id, password_hash)
+	#def borrower_submitted_by_installer_application(first_name, last_name, recipient, borrower_id, installer_id, password_hash)
+	# 	subject "Collective Sun Borrower Application Received"
+ #   	body[:first_name] = first_name
+	# 	body[:last_name] = last_name
+	# 	body[:borrower_id] = borrower_id
+	# 	body[:installer_id] = installer_id
+	# 	body[:company_name] = Installer.find(installer_id).company_name
+	# 	body[:password_hash] = password_hash
+	# 	recipients recipient
+	# 	from "info@collectivesun.com"
+	# 	sent_on= Time.now
+	# end
+	def borrower_submitted_by_installer_application(name, recipient, installer_id)
 		subject "Collective Sun Borrower Application Received"
-    	body[:first_name] = first_name
-		body[:last_name] = last_name
-		body[:borrower_id] = borrower_id
+		body[:name] = name
 		body[:installer_id] = installer_id
 		body[:company_name] = Installer.find(installer_id).company_name
-		body[:password_hash] = password_hash
 		recipients recipient
 		from "info@collectivesun.com"
 		sent_on= Time.now
