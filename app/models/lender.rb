@@ -8,7 +8,7 @@ class Lender < ActiveRecord::Base
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :message => "Email format invalid"
   validates_uniqueness_of :email, :if => Proc.new { |ph| !ph.email.blank?}
  # validate :check_email_uniqueness?, :unless => Proc.new { |u| u.email.nil? }
-  validates_numericality_of :phone
+  validates_numericality_of :phone, :if => Proc.new { |ph| !ph.phone.blank?}
 
   def validate
     lender_user = User.find(:first, :conditions => ["email = ?", email])
