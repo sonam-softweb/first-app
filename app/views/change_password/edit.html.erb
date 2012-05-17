@@ -1,0 +1,43 @@
+<center>
+<font size=3><b>Change Password</b></font><BR><BR>
+<%= error_messages_for 'installer' %>
+
+<% form_tag :action => 'update' do %>
+  <Table Border=0>
+  <TR>
+  <TD Align=right>
+  Old Password:
+  </TD>
+  <TD Align=left>
+  <%= password_field_tag :old_password %>
+  </TD>
+  </TR>
+
+
+  <TR>
+  <TD Align=right>
+  New Password:
+  </TD>
+  <TD Align=left>
+  <%= password_field_tag :new_password %>
+  </TD>
+  </TR>
+
+  <TR>
+  <TD Align=right>
+  Confirm New Password:
+  </TD>
+  <TD Align=left>
+   <%= password_field_tag :confirm_password %>
+  </TD>
+  </TR>
+ 
+  <TR>
+  <TD Colspan=2 align=center>
+   <BR>
+    <%= submit_tag(value = "SUBMIT") %>
+  </TD>
+  </TR>
+  </Table>
+<% end %>
+</center>

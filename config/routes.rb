@@ -34,6 +34,7 @@ ActionController::Routing::Routes.draw do |map|
   # map.root :controller => "welcome"
 
   map.resources :password_resets, :only => [ :new, :create, :edit, :update ]
+  map.connect 'change_password', :controller => "change_password", :action => "edit"
   map.resource :user_session
   map.resources :borrowers
   map.root :controller => "public", :action => "index"
