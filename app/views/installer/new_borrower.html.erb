@@ -8,10 +8,11 @@
 	First Name:
 	</TD>
 	<TD Align=left>
+		<%=a.hidden_field "installer_id", :value => params[:id]%>
 	<%= a.text_field :first_name %>
 	</TD>
 	</TR>
-	
+
 	<TR>
 	<TD Align=right>
 	Last Name:
@@ -170,7 +171,7 @@
 	<%= submit_tag(value = "   *** SUBMIT APPLICATION ***   ") %>
 	</TD>
 	</TR>
-		
+
 	</Table>
 <% end %>
 </center>
