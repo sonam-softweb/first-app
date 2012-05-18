@@ -1,8 +1,9 @@
 <div class="row" style="float:left;">
   <div class="onecol">
-
   </div>
   <div class="round-corners sevencol fancy-form">
+        <%=error_messages_for "user_session"%>
+
     <h2>Please Log In.</h2>
     <div class="eightcol">
       <% form_for @user_session, :url => "/account/login" do |f| %>
