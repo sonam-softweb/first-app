@@ -2,8 +2,8 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
-	filter_parameter_logging :password, :password_confirmation
-  helper_method :current_user_session, :current_user
+	#filter_parameter_logging :password, :password_confirmation
+  #helper_method :@current_user_session, :@current_user
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
@@ -15,9 +15,9 @@ class ApplicationController < ActionController::Base
 	protected
 	def fetch_logged_in_user
 		#abort session[:user_id].inspect
-		session[:user_id] = current_user
+		#session[:user_id] = @current_user
 		return if session[:user_id].blank?
-		#current_user = User.find_by_id(session[:user_id])
+		@current_user = User.find_by_id(session[:user_id])
 
 #		session[:borrower_user] = false
 #		session[:lender_user] = false
@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
 		@user_installers = Array.new
 		@user_managers = Array.new
 
-		current_user.user_rights.each do |x|
+		@current_user.user_rights.each do |x|
 			if !x.borrower_id.nil?
 #				session[:borrower_user] = true
 				@user_borrowers << x.borrower_id
@@ -53,14 +53,14 @@ class ApplicationController < ActionController::Base
 		end
 
 
-#		current_user2 = current_user.manager if session[:user_type] == "manager"
-#		current_user2 = current_user.installer if session[:user_type] == "installer"
-#		current_user2 = current_user.borrower if session[:user_type] == "borrower"
-#		current_user2 = current_user.lender if session[:user_type] == "lender"
+#		@current_user2 = @current_user.manager if session[:user_type] == "manager"
+#		@current_user2 = @current_user.installer if session[:user_type] == "installer"
+#		@current_user2 = @current_user.borrower if session[:user_type] == "borrower"
+#		@current_user2 = @current_user.lender if session[:user_type] == "lender"
 	end
 
 	def logged_in?
-		!current_user.blank?
+		!@current_user.blank?
 	end
 	helper_method :logged_in?
 
@@ -120,16 +120,16 @@ class ApplicationController < ActionController::Base
 #		flash[:notice] = "Sorry, that project is not available.  Please select another project, below."
 #		redirect_to :controller => "main", :action => "index" and return false
 #	end
-private
-  def current_user_session
-    return @current_user_session if defined?(@current_user_session)
-    @current_user_session = UserSession.find
-  end
+#private
+ # def @current_user_session
+  #  return @@current_user_session if defined?(@@current_user_session)
+   # @@current_user_session = UserSession.find
+  #end
 
-  def current_user
-    return @current_user if defined?(@current_user)
-    @current_user = current_user_session && current_user_session.user
-  end
+  #def @current_user
+   # return @@current_user if defined?(@@current_user)
+   # @@current_user = @current_user_session && @current_user_session.user
+  #end
 
 
 end

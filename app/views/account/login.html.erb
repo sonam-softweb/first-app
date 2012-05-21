@@ -6,16 +6,16 @@
 
     <h2>Please Log In.</h2>
     <div class="eightcol">
-      <% form_for @user_session, :url => "/account/login" do |f| %>
-      <%# form_tag  do %>
+      <%# form_for @user_session, :url => "/account/login" do |f| %>
+      <% form_tag  do %>
       <%# form_tag({:controller => :account, :action => :do_login}) do %>
 	<p>
 	  <%= label_tag :email, "Email Address: " %> <br />
-	  <%= f.text_field 'email', :size => "" %>
+	  <%= text_field "",'email'%>
 	</p>
 	<p>
 	  <%= label_tag :password_field_tag, "Password: " %> <br />
-	  <%= f.password_field 'password', :size => "" %>
+	  <%= password_field "",'password' %>
 	</p>
   <%= link_to "Forgot Password?", "/password_resets/new"%>
 	<p class="centre">

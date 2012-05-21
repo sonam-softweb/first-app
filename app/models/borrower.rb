@@ -20,5 +20,4 @@ class Borrower < ActiveRecord::Base
       errors.add(:email," has already been taken") #if !errors.include?("Email has already been taken")
     end
   end
-
 end

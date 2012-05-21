@@ -1,8 +1,9 @@
 <center>
 <font size=3><b>Change Password</b></font><BR><BR>
-<%= error_messages_for 'change_password' %>
+
 
 <% form_tag :action => 'update' do %>
+
   <Table Border=0>
   <TR>
   <TD Align=right>
@@ -13,13 +14,12 @@
   </TD>
   </TR>
 
-
   <TR>
   <TD Align=right>
   New Password:
   </TD>
   <TD Align=left>
-  <%= password_field_tag :new_password %>
+  <%= password_field_tag :password %>
   </TD>
   </TR>
 
@@ -28,7 +28,7 @@
   Confirm New Password:
   </TD>
   <TD Align=left>
-   <%= password_field_tag :confirm_password %>
+   <%= password_field_tag :password_confirmation %>
   </TD>
   </TR>
  

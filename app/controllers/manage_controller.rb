@@ -35,14 +35,14 @@ before_filter :manager_required # You must have a user_right of "manager"
 		# Create their password
 		@password = random_password
 		@password_hash = Digest::SHA1.hexdigest(@password)
-		@user.password = @password
+		@user.password = @password_hash
 		@user.email = @installer_application.email
-		@user.password_confirmation = @password
+		#@user.password_confirmation = @password
 		#@user.installer_id = @installer_application.id
-		#@user.user_type = "installer"
+		#user.user_type = "installer"
 
 		if @user.save && @installer_application.update_attribute(:status, "Approved") #&& @installer_application.update_attribute(:user_id, @user.id)
-			UserRight.create :user_id => @user.id, :installer_id => @installer_application.id
+			#UserRight.create :user_id => @user.id, :installer_id => @installer_application.id
 			# Create client in Payments Gateway
 			account = PaymentsGateway::MerchantAccount.new('138148', '3P0Uvj4a8V', 'B0v6xPbI3', 'n68V8A4jNXu', false)
 			client = PaymentsGateway::Client.new

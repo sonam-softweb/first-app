@@ -9,9 +9,10 @@ class User < ActiveRecord::Base
 #	belongs_to :borrower
 #	belongs_to :lender
 
-  acts_as_authentic do |c|
-    c.login_field = :email
-  end
+
+	#acts_as_authentic do |c|
+	 # c.login_field = :email
+	#end
 	has_many :user_rights
 
 	has_many :borrowers, :through => :user_rights
