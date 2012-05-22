@@ -1,0 +1,69 @@
+<center>
+<B><Font Size=5>Projects</Font></B>
+<BR><BR>
+
+<TABLE Border=1>
+<TR>
+<TD>
+<U>Project Title</U>
+</TD>
+<TD>
+<U>Description</U>
+</TD>
+<TD>
+<U>Content</U>
+</TD>
+<TD>
+<U>City</U>
+</TD>
+<TD>
+<U>State</U>
+</TD>
+<TD>
+<U>Fund Needed</U>
+</TD>
+<TD>
+<U>Project Start</U>
+</TD>
+<TD>
+<U>Project End</U>
+</TD>
+</TR>
+
+
+<% @projects.each do |p| %>
+	<TR Align=Left>
+	<TD>
+	<%= link_to p.title, { :action => 'edit', :id => p.id } %>
+	</TD>
+	<TD>
+	<%= link_to p.description, { :action => 'edit', :id => p.id } %>
+	</TD>
+	<TD>
+	<%= link_to p.content, { :action => 'edit', :id => p.id } %>
+	</TD>
+	<TD>
+	<%= link_to p.city, { :action => 'edit', :id => p.id } %>
+	</TD>
+	<TD>
+	<%= link_to p.state, { :action => 'edit', :id => p.id } %>
+	</TD>
+	<TD>
+	<%= link_to p.fund_needed, { :action => 'edit', :id => p.id } %>
+	</TD>
+	<TD>
+        <% if p.start_date %>
+	 <%= link_to p.start_date.strftime('%m/%d/%Y'), { :action => 'edit', :id => p.id } %>
+        <% end %>
+	</TD>
+	<TD>
+        <% if p.end_date %>
+	 <%= link_to p.end_date.strftime('%m/%d/%Y'), { :action => 'edit', :id => p.id } %>
+        <% end %>
+	</TD>
+	</TR>
+<% end %>
+
+</center>
+</TABLE>
+<BR><BR>

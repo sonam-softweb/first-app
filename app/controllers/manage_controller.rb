@@ -131,7 +131,6 @@ before_filter :manager_required # You must have a user_right of "manager"
 		@borrower_applications = Borrower.find(:all, :conditions => {:status => ["SubmittedByInstaller", "Under Review"]})
 
 	end
-
 	def edit_borrower_application
 		@borrower_application = Borrower.find(params[:id])
 
@@ -140,7 +139,48 @@ before_filter :manager_required # You must have a user_right of "manager"
 			redirect_to :controller => 'manage', :action => 'index'
 		end
 	end
+	def list_approved_projects
+		@approved_projects = Project.find(:all, :conditions => ["status = ?", "Approved"])
+	end
 
+	def list_project_applications
+		@project_applications = Project.find(:all, :conditions => {:status => ["Under Review"]})
+	end
+
+	def edit_project_application
+		@project_application = Project.find(params[:id])
+
+		if request.post? and @project_application.update_attributes(params[:project_application])
+			flash[:notice] = "Record for #{@project_application.title} Updated!"
+			redirect_to :controller => 'manage', :action => 'index'
+		end
+	end
+	def edit_project
+		@project = Project.find(params[:id])
+
+		if request.post? and @project.update_attributes(params[:project])
+			flash[:notice] = "Record for #{@project.title} Updated!"
+			redirect_to :controller => 'manage', :action => 'index'
+		end
+	end
+        def approve_project_application
+          @project_application =  Project.find(params[:id])
+          if @project_application.update_attribute(:status, "Approved")
+             @installer_detail =   Installer.find(@project_application.installer_id)
+             Emailer.deliver_project_application_approve_notify("#{@project_application.title}", "#{@project_application.description}", "#{@project_application.fund_needed}","#{@installer_detail.first_name}","#{@installer_detail.last_name}","#{@installer_detail.email}")
+             flash[:notice] = "Project Approved"
+	     redirect_to :controller => "manage", :action => 'index'
+          end
+        end
+        def deny_project_application
+          @project_application =  Project.find(params[:id])
+          if @project_application.update_attribute(:status, "Denied")
+             @installer_detail =   Installer.find(@project_application.installer_id)
+             Emailer.deliver_project_application_deny_notify("#{@project_application.title}", "#{@project_application.description}", "#{@project_application.fund_needed}","#{@installer_detail.first_name}","#{@installer_detail.last_name}","#{@installer_detail.email}")
+             flash[:notice] = "Denied Project Application"
+	     redirect_to :controller => "manage"
+          end
+        end
 	def approve_borrower_application
 		# Update status, user_id, system price, approval_date, expiration_date fields in application + add user record
 		@borrower_application = Borrower.find(params[:id])

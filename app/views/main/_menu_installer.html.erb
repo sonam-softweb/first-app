@@ -1,6 +1,7 @@
 <div class="row round-corners index-page">
 <h1>Installer Menu - <%= Installer.find(session[:current_user_installer_id]).company_name %></h1>
 <!-- <h3><%#= link_to "Invite a New Customer", :controller => "installer", :action => "new_borrower" %></h3> -->
+<h3><%= link_to "Create project", :controller => "project", :action => "new" %></h3>
 <h3><%= link_to "Invite a New Customer", :controller => "installer", :action => "new_invitation" %></h3>
 
 <h3><%= link_to "View Your Customer Invitations", :controller => "installer", :action => "list_borrower_invitations" %></h3>

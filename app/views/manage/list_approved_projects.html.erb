@@ -1,0 +1,68 @@
+<%#= render :partial => "login_logout" %>
+
+<center>
+<B><Font Size=5>Projects</Font></B>
+<BR><BR>
+
+<TABLE Border=1>
+<TR>
+<TD>
+<U>Project Title</U>
+</TD>
+<TD>
+<U>Description</U>
+</TD>
+<TD>
+<U>Content</U>
+</TD>
+<TD>
+<U>City</U>
+</TD>
+<TD>
+<U>State</U>
+</TD>
+<TD>
+<U>Fund Needed</U>
+</TD>
+<TD>
+<U>Project Start</U>
+</TD>
+<TD>
+<U>Project End</U>
+</TD>
+</TR>
+
+<% @approved_projects.each do |p| %>
+	<TR Align=Left>
+	<TD>
+	<%= link_to p.title, { :action => 'edit_project', :id => p.id } %>
+	</TD>
+	<TD>
+	<%= link_to p.description, { :action => 'edit_project', :id => p.id } %>
+	</TD>
+	<TD>
+	<%= link_to p.content, { :action => 'edit_project', :id => p.id } %>
+	</TD>
+	<TD>
+	<%= link_to p.city, { :action => 'edit_project', :id => p.id } %>
+	</TD>
+	<TD>
+	<%= link_to p.state, { :action => 'edit_project', :id => p.id } %>
+	</TD>
+	<TD>
+	<%= link_to p.fund_needed, { :action => 'edit_project', :id => p.id } %>
+	</TD>
+	<TD>
+	<%= link_to p.start_date.strftime('%m/%d/%Y'), { :action => 'edit_project', :id => p.id } %>
+	</TD>
+	<TD>
+	<%= link_to p.end_date.strftime('%m/%d/%Y'), { :action => 'edit_project', :id => p.id } %>
+	</TD>
+	</TR>
+<% end %>
+</TABLE>
+<BR><BR>
+<%= link_to "Main Menu", :controller => "manage", :action => "index" %><BR>
+<%#= Time.now.strftime("%D %I:%M:%S %p")%>
+<%= Time.now.strftime("%m/%d/%Y")%>&nbsp;&nbsp;<%= Time.now.strftime("%I:%M%p")%>
+</center>

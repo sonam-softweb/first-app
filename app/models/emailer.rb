@@ -326,7 +326,7 @@ class Emailer < ActionMailer::Base
 
 	def email_share_project(borrower_id, from_name, from_email, to_name, recipient, message)
 		subject "Collective Sun"
-    	body[:borrower_id] = borrower_id
+    	        body[:borrower_id] = borrower_id
 		body[:from_name] = from_name
 		body[:from_email] = from_email
 		body[:to_name] = to_name
@@ -348,4 +348,26 @@ class Emailer < ActionMailer::Base
     body         :edit_password_reset_url => edit_password_reset_path(user.perishable_token)
   end
 
+## Project E-mails ##
+
+    def project_application_approve_notify(project_title,project_description,project_fund,installer_firstname,installer_lastname,email)
+
+     		subject "Project application approved successfully"
+    	        body[:first_name] = installer_firstname
+		body[:last_name] = installer_lastname
+		body[:to_name] = installer_firstname
+		recipients email
+		sent_on= Time.now
+      
+    end
+    def project_application_deny_notify(project_title,project_description,project_fund,installer_firstname,installer_lastname,email)
+
+     		subject "Project application Denied"
+    	        body[:first_name] = installer_firstname
+		body[:last_name] = installer_lastname
+		body[:to_name] = installer_firstname
+		recipients email
+		sent_on= Time.now
+      
+    end
 end

@@ -1,0 +1,100 @@
+<%#= render :partial => "login_logout" %>
+
+<center>
+<B><Font Size=4>Edit Project Application</Font></B>
+<BR><BR>
+
+<Font Size=2><%= link_to "Approve This Project Application", { :controller => "manage", :action => "approve_project_application", :id => @project_application.id }, :confirm => "Are you sure you want to approve this project application?"%></Font>
+<BR><BR>
+<%= error_messages_for 'project' %>
+<TABLE>
+<% form_for :project_application do |a| %>
+	<Table Border=0>
+  <TR>
+  <TD Align=right>
+  Title:
+  </TD>
+  <TD Align=left>
+  <%= a.text_field :title %>
+  </TD>
+  </TR>
+
+
+  <TR>
+  <TD Align=right>
+  Descripton:
+  </TD>
+  <TD Align=left>
+  <%= a.text_area :description, :maxlength => 400, :size => "30x5" %>
+  </TD>
+  </TR>
+
+  <TR>
+  <TD Align=right>
+  Content:
+  </TD>
+  <TD Align=left>
+  <%= a.text_area :content, :maxlength => 400, :size => "30x5" %>
+  </TD>
+  </TR>
+
+  <TR>
+  <TD Align=right>
+  Fund Needed:
+  </TD>
+  <TD Align=left>
+  <%= a.text_field :fund_needed %>
+  </TD>
+  </TR>
+
+  <TR>
+  <TD Align=right>
+  City:
+  </TD>
+  <TD Align=left>
+  <%= a.text_field :city %>
+  </TD>
+  </TR>
+
+  <TR>
+  <TD Align=right>
+  State:
+  </TD>
+  <TD Align=left>
+  <%= a.text_field :state %>
+  </TD>
+  </TR>
+
+  <TR>
+  <TD Align=right>
+  Start Date:
+  </TD>
+  <TD Align=left>
+  <%= a.date_select :start_date %>
+  </TD>
+  </TR>
+
+  <TR>
+  <TD Align=right>
+  End Date:
+  </TD>
+  <TD Align=left>
+   <%= a.date_select :end_date %>
+  </TD>
+  </TR>
+
+
+	<TR>
+	<TD colspan=2 align=center>
+	<%= submit_tag "  *** UPDATE RECORD ***   " %>
+	</TD>
+	</TR>
+</TABLE>
+<% end %>
+<BR>
+<Font Size=2><%= link_to "Deny This Installer Application", { :controller => "manage", :action => "deny_project_application", :id => @project_application.id }, :confirm => "Are you sure you want to deny this project application?"%></Font>
+<BR><BR>
+<%= link_to "Main Menu", :controller => "manage", :action => "index" %><BR>
+<%#= Time.now.strftime("%D %I:%M:%S %p")%>
+<%= Time.now.strftime("%m/%d/%Y")%>&nbsp;&nbsp;<%= Time.now.strftime("%I:%M%p")%>
+</center>

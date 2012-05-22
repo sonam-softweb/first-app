@@ -1,0 +1,93 @@
+<center>
+<B><Font Size=4>Edit Project</Font></B>
+<%= error_messages_for 'project' %>
+<% form_for :project do |a| %>
+
+  <Table Border=0>
+
+  <TR>
+  <TD Align=right>
+  Title:
+  </TD>
+  <TD Align=left>
+  <%= a.text_field :title %>
+  </TD>
+  </TR>
+
+
+  <TR>
+  <TD Align=right>
+  Descripton:
+  </TD>
+  <TD Align=left>
+  <%= a.text_area :description, :maxlength => 400, :size => "30x5" %>
+  </TD>
+  </TR>
+
+  <TR>
+  <TD Align=right>
+  Content:
+  </TD>
+  <TD Align=left>
+  <%= a.text_area :content, :maxlength => 400, :size => "30x5" %>
+  </TD>
+  </TR>
+
+  <TR>
+  <TD Align=right>
+  Fund Needed:
+  </TD>
+  <TD Align=left>
+  <%= a.text_field :fund_needed %>
+  </TD>
+  </TR>
+
+  <TR>
+  <TD Align=right>
+  City:
+  </TD>
+  <TD Align=left>
+  <%= a.text_field :city %>
+  </TD>
+  </TR>
+
+  <TR>
+  <TD Align=right>
+  State:
+  </TD>
+  <TD Align=left>
+  <%= a.text_field :state %>
+  </TD>
+  </TR>
+
+  <TR>
+  <TD Align=right>
+  Start Date:
+  </TD>
+  <TD Align=left>
+  <%= a.date_select :start_date %>
+  </TD>
+  </TR>
+
+  <TR>
+  <TD Align=right>
+  End Date:
+  </TD>
+  <TD Align=left>
+   <%= a.date_select :end_date %>
+  </TD>
+  </TR>
+   <%= a.hidden_field :installer_id, :value => @project.installer_id %>
+  <TR>
+  <TD Colspan=2 align=center>
+  <BR>
+  <%= submit_tag(value = "Update") %>
+  </TD>
+  </TR>
+    
+  </Table>
+  
+<% end %>
+
+<%= link_to "Main Menu", :controller => "manage", :action => "index" %><BR>
+</center>
