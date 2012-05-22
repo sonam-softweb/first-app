@@ -148,9 +148,9 @@ before_filter :manager_required # You must have a user_right of "manager"
 		# Create their password
 		@password = random_password
 		@password_hash = Digest::SHA1.hexdigest(@password)
-		@user.password = @password
+		@user.password = @password_hash
 		@user.email = @borrower_application.email
-		@user.password_confirmation = @password
+		#@user.password_confirmation = @password
 		#@user.borrower_id = @borrower_application.id
 		#@user.user_type = "borrower"
 
@@ -290,9 +290,9 @@ before_filter :manager_required # You must have a user_right of "manager"
 		# Create their password
 		@password = random_password
 		@password_hash = Digest::SHA1.hexdigest(@password)
-		@user.password = @password
+		@user.password = @password_hash
 		@user.email = @lender_application.email
-		@user.password_confirmation = @password
+		#@user.password_confirmation = @password
 
 		#@user.email = @lender_application.email
 		#@user.lender_id = @lender_application.id
@@ -335,19 +335,13 @@ before_filter :manager_required # You must have a user_right of "manager"
 
 	def list_pending_borrower_payments
 		@pending_borrower_payments = DueBorrowerPayment.find(:all, :conditions => "due_date <= '" + Date.today.to_s + "' AND processed = 0")
-#		@text = ""
 		@text = String.new
 		if request.post? && params[:due_borrower_payments]
 			params[:due_borrower_payments].each do |x|
 				@text = @text + x.to_s
 			flash[:notice] = x
 			end
-
 			flash[:notice] = "Posted! #{@text}"
-
 		end
-
 	end
-
-
 end

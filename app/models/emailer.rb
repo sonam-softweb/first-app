@@ -345,7 +345,7 @@ class Emailer < ActionMailer::Base
     recipients   user.email
     content_type "text/html"
     sent_on      Time.now
-    body         :edit_password_reset_url => edit_password_reset_path(user.perishable_token)
+    body         :edit_password_reset_url => edit_password_reset_path(user.password_reset_token)
   end
 
 end

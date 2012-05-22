@@ -21,8 +21,8 @@ class PasswordResetsController < ApplicationController
   end
 
   def update
-    @user.password = params[:password]
-    @user.password_confirmation = params[:password]
+    @user.password = Digest::SHA1.hexdigest(params[:password])
+    #@user.password_confirmation = params[:password]
     # Only if your are using password confirmation
     # @user.password_confirmation = params[:password]
 
@@ -40,7 +40,7 @@ class PasswordResetsController < ApplicationController
   private
 
   def load_user_using_perishable_token
-    @user = User.find_using_perishable_token(params[:id])
+    @user = User.find_by_password_reset_token(params[:id])
     unless @user
       flash[:error] = "We're sorry, but we could not locate your account"
       redirect_to root_url
