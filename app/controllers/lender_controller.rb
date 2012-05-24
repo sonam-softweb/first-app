@@ -90,4 +90,12 @@ before_filter :login_required, :except => "lender_registration"
 		end
 	end
 
+	def list_projects
+	   @projects = Project.find(:all, :conditions => ["status = ?", "Approved"])	
+	end
+
+	def project_detail
+	   @project = Project.find(params[:id])	
+	end
+
 end

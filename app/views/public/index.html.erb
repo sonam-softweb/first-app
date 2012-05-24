@@ -96,6 +96,10 @@
 	    <h2><%= (borrower.expiration_date.to_date - Date.today).to_i %> days <small>left</small></h2>
 	    <p><strong>Expires: </strong><%= borrower.expiration_date.to_date.to_formatted_s %></p>
     </div>
+    </a>
+    <div id="sun">
+      <%= image_tag('/images/test.jpg', :id => "image-sun-#{borrower.id}")  %>
+    </div>  
     <div class="fivecol last">
         <p><strong>Funding Needed:</strong> <%= number_to_currency borrower.system_price %></p>
         <p><strong>Funding Raised: </strong><%= number_to_currency borrower.bids.sum("amount").to_i  %></p>
@@ -106,7 +110,7 @@
             <%= image_tag('/images/solars.jpg')  %>
           <% end %>
         </p>
-    </a>
+
     </div>
 
 

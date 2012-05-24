@@ -1,0 +1,78 @@
+<center>
+<B><Font Size=5>Project Detail</Font></B>
+<BR><BR>
+
+
+  <Table Border=0>
+
+  <TR>
+  <TD Align=right>
+  Title:
+  </TD>
+  <TD Align=left>
+  <%= @project.title %>
+  </TD>
+  </TR>
+  <TR>
+  <TD Align=right>
+  Descripton:
+  </TD>
+  <TD Align=left>
+  <%= @project.description %>
+  </TD>
+  </TR>
+  <TR>
+  <TD Align=right>
+  Content:
+  </TD>
+  <TD Align=left>
+   <%= @project.content %>
+  </TD>
+  </TR>
+
+  <TR>
+  <TD Align=right>
+  Fund Needed:
+  </TD>
+  <TD Align=left>
+ <%= @project.fund_needed %>
+  </TD>
+  </TR>
+
+  <TR>
+  <TD Align=right>
+  City:
+  </TD>
+  <TD Align=left>
+   <%= @project.city %>
+  </TD>
+  </TR>
+
+  <TR>
+  <TD Align=right>
+  State:
+  </TD>
+  <TD Align=left>
+  <%= @project.state %>
+  </TD>
+  </TR>
+
+  <TR>
+  <TD Align=right>
+  Start Date:
+  </TD>
+  <TD Align=left>
+   <%= @project.start_date.strftime('%m/%d/%Y') %>
+  </TD>
+  </TR>
+
+  <TR>
+  <TD Align=right>
+  End Date:
+  </TD>
+  <TD Align=left>
+    <%= @project.end_date.strftime('%m/%d/%Y') %>
+  </TD>
+  </TR>
+  </Table>
+</center>

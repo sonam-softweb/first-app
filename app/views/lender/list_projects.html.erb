@@ -1,0 +1,33 @@
+<center>
+<B><Font Size=5>Projects</Font></B>
+<BR><BR>
+
+<TABLE Border=1>
+<TR>
+<TD>
+<U>Project Title</U>
+</TD>
+<TD>
+<U>Description</U>
+</TD>
+<TD>
+<U>Content</U>
+</TD>
+
+
+<% @projects.each do |p| %>
+	<TR Align=Left>
+	<TD>
+	<%= link_to p.title, { :action => 'project_detail', :id => p.id } %>
+	</TD>
+	<TD>
+	<%= link_to p.description, { :action => 'project_detail', :id => p.id } %>
+	</TD>
+	<TD>
+	<%= link_to p.content, { :action => 'project_detail', :id => p.id } %>
+	</TD>
+	<TD>
+
+<% end %>
+</TABLE>
+</center>
